@@ -11,7 +11,6 @@
 [![Issues](https://img.shields.io/github/issues/erdogant/dicter.svg)](https://github.com/erdogant/dicter/issues)
 [![Project Status](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![DOI](https://zenodo.org/badge/228166657.svg)](https://zenodo.org/badge/latestdoi/228166657)
-[![Medium](https://img.shields.io/badge/Medium-Blog-green)](https://towardsdatascience.com/what-are-dicter-loadings-and-biplots-9a7897f2e559)
 [![Colab](https://colab.research.google.com/assets/colab-badge.svg?logo=github%20sponsors)](https://erdogant.github.io/dicter/pages/html/Documentation.html#colab-notebook)
 ![GitHub Repo stars](https://img.shields.io/github/stars/erdogant/dicter)
 ![GitHub repo size](https://img.shields.io/github/repo-size/erdogant/dicter)
@@ -22,9 +21,11 @@
 
 * ``dicter`` is Python package with dictionary functions;
 
-	* Traverse through nested dicts.
-	* Set and get multiple keys.
+	* Traverse through nested dicts to retrieve key-path.
+	* Set value in dictionary using key-path
+	* Get value in dictionary using key-path.
 	* Flattens dicts.
+	* Compare two dicts.
 	* Store and load in json.
 
 
@@ -33,60 +34,138 @@
 **Star this repo if you like it! ⭐️**
 #
 
-
 ## Blog/Documentation
 
 * [**dicter documentation pages (Sphinx)**](https://erdogant.github.io/dicter/)
 
+* <a href="https://erdogant.github.io/dicter/"> <img src="https://img.shields.io/badge/Sphinx-Docs-Green" alt="Open documentation pages"/> </a> dicter documentation pages 
 
-
-### Contents
-- [Installation](#-installation)
-- [Contribute](#-contribute)
-- [Citation](#-citation)
-- [Maintainers](#-maintainers)
-- [License](#-copyright)
 
 ### Installation
 * Install dicter from PyPI (recommended). dicter is compatible with Python 3.6+ and runs on Linux, MacOS X and Windows. 
 * A new environment can be created as following:
 
-```bash
-conda create -n env_dicter python=3.8
-conda activate env_dicter
-```
 
 ```bash
-pip install dicter            # normal install
-pip install --upgrade dicter # or update if needed
+pip install -U dicter
 ```
 
 * Alternatively, you can install from the GitHub source:
 ```bash
 # Directly install from github source
 pip install git+https://github.com/erdogant/dicter
+```
 
-# By cloning
-git clone https://github.com/erdogant/dicter.git
-cd dicter
-pip install -U .
-```  
 
 #### Import dicter package
 ```python
-import dicter as dicter
+import dicter as dt
 ```
 
-#### Example:
+#### Traverse all paths in dictionary.
 ```python
-df = pd.read_csv('https://github.com/erdogant/hnet/blob/master/dicter/data/example_data.csv')
-model = dicter.fit(df)
-G = dicter.plot(model)
+import dicter as dt
+ # Example dict:
+d = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 3, 'level_d': {'a': 1, 'b': 2, 'c': {'e': 10}}, 'level_e': 2}
+# Walk through dict to get all paths
+paths = dt.path(d)
+
+print(paths)
+# [[['level_a'], 1],
+# [['level_c'], 3],
+# [['level_e'], 2],
+# [['level_b', 'a'], 'hello world'],
+# [['level_d', 'a'], 1],
+# [['level_d', 'b'], 2],
+# [['level_d', 'c', 'e'], 10]]
 ```
-<p align="center">
-  <img src="https://github.com/erdogant/dicter/blob/master/docs/figs/fig1.png" width="600" />
-  
-</p>
+
+#### Get value from dictionary using nested keys.
+```python
+# Import dicter
+import dicter as dt
+
+# Example dictionary
+d = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 3, 'level_d': {'a': 1, 'b': 2, 'c': {'e': 10}}, 'level_e': 2}
+# Get the value for the nested path for:
+value = dt.get_nested(d, key_path=["level_b", "a"])
+print(value)
+# 'hello world'
+
+```
+
+#### Set value from dictionary using nested keys.
+```python
+# Import dicter
+import dicter as dt
+
+# Example: New path and value in dictionary.
+d = {}
+key_path = ['person', 'address', 'city']
+dt.set_nested(d, key_path, 'New York')
+# Print updated dictionary
+print(d)
+# {'person': {'address': {'city': 'New York'}}}
+
+```
+
+#### Set value from dictionary using nested keys.
+```python
+# Import dicter
+import dicter as dt
+
+# Example dict
+d = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 3, 'level_d': {'a': 1, 'b': 2, 'c': {'e': 10}}, 'level_e': 2}
+# Flatten dictionary
+dflat = dt.flatten(d)
+
+print(d_flat)
+
+# [['level_a', 1],
+#  ['a', 'hello world'],
+#  ['level_c', 3],
+#  ['a', 1],
+#  ['b', 2],
+#  ['e', 10],
+#  ['level_e', 2]]
+ 
+```
+
+
+#### Depth of dictionary.
+```python
+# Import dicter
+import dicter as dt
+
+d = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 3, 'level_d': {'a': 1, 'b': 2, 'c': {'e': 10}}, 'level_e': 2}
+n = dt.depth(d)
+
+```
+
+#### Compare dictionary.
+```python
+# Import dicter
+import dicter as dt
+
+Example: Add
+d1 = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 'new in d2'}
+d2 = {'level_a': 1, 'level_b': {'a': 'hello world'}}
+out = dt.compare(d1, d2)
+print(out)
+
+Example: Remove
+d1 = {'level_a': 1, 'level_b': {'a': 'hello world'}}
+d2 = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 'new in d2'}
+out = dt.compare(d1, d2)
+print(out)
+
+Example: Modified
+d1 = {'level_a': 1, 'level_b': {'a': 'hello world'}}
+d2 = {'level_a': 1, 'level_b': {'a': 'modified'}}
+out = dt.compare(d1, d2)
+print(out['modified'])
+
+```
 
 
 #### References
