@@ -27,9 +27,7 @@ dicter is for...
 
 Example
 -------
->>> import dicter as dicter
->>> model = dicter.fit_transform(X)
->>> fig,ax = dicter.plot(model)
+>>> import dicter as dt
 
 References
 ----------
