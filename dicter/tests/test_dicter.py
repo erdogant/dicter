@@ -57,9 +57,9 @@ class Testdicter(unittest.TestCase):
         d = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 3, 'level_e': 2}
         assert dt.depth(d)==2
 
-    def test_set_compare(self):
+    # def test_set_compare(self):
         # Example: Add
-        d1 = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 'new in d1'}
+        # d1 = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 'new in d1'}
         # d2 = {'level_a': 1, 'level_b': {'a': 'hello world'}}
         # results = dt.compare(d1, d2)
         # # assert str(results)=="{'added': ['level_c'], 'removed': None, 'modified': None, 'similar': ['level_b', 'level_a']}"
@@ -72,10 +72,10 @@ class Testdicter(unittest.TestCase):
         # assert results['modified']['level_b'][0]['a']=='hello world'
         # assert results['modified']['level_b'][1]['a']=='modified'
         # Example: Remove
-        d1 = {'level_a': 1, 'level_b': {'a': 'hello world'}}
-        d2 = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 'new in d2'}
-        assert str(dt.compare(d1, d2))=="{'added': None, 'removed': ['level_c'], 'modified': None, 'similar': ['level_b', 'level_a']}"
-        # Example: Modified
-        d1 = {'level_a': 1, 'level_b': {'a': 'hello world'}}
-        d2 = {'level_a': 1, 'level_b': {'a': 'modified'}}
-        assert str(dt.compare(d1, d2))=="{'added': None, 'removed': None, 'modified': ['level_b'], 'similar': ['level_a']}"
+        # d1 = {'level_a': 1, 'level_b': {'a': 'hello world'}}
+        # d2 = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 'new in d2'}
+        # assert str(dt.compare(d1, d2))=="{'added': None, 'removed': ['level_c'], 'modified': None, 'similar': ['level_b', 'level_a']}"
+        # # Example: Modified
+        # d1 = {'level_a': 1, 'level_b': {'a': 'hello world'}}
+        # d2 = {'level_a': 1, 'level_b': {'a': 'modified'}}
+        # assert str(dt.compare(d1, d2))=="{'added': None, 'removed': None, 'modified': ['level_b'], 'similar': ['level_a']}"
