@@ -12,14 +12,18 @@ dicter's documentation!
 
 -----------------------------------
 
-|python| |pypi| |docs| |stars| |LOC| |downloads_month| |downloads_total| |license| |forks| |open issues| |project status| |medium| |colab| |DOI| |repo-size| |donate|
+|python| |pypi| |docs| |stars| |LOC| |downloads_month| |downloads_total| |license| |forks| |open issues| |project status| |DOI| |repo-size| |donate|
 
 
-*dicter* is a Python package for ...
+*dicter* is a Python package with the most wanted dictionary functions:
 
+	* Traverse through nested dicts to retrieve key-path.
+	* Set value in dictionary using key-path
+	* Get value in dictionary using key-path.
+	* Flattens dicts.
+	* Compare two dicts.
+	* Store and load in json.
 
-.. tip::
-	`Medium Blog: Creating beautiful stand-alone interactive D3 charts with Python <https://towardsdatascience.com/creating-beautiful-stand-alone-interactive-d3-charts-with-python-804117cb95a7>`_
 
 
 Github
@@ -39,12 +43,6 @@ Quick install
 Content
 =======
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Background
-   
-   Abstract
-
 
 .. toctree::
    :maxdepth: 1
@@ -54,20 +52,10 @@ Content
 
 
 .. toctree::
-  :maxdepth: 1
-  :caption: Methods
+  :maxdepth: 2
+  :caption: Functions
 
-  Algorithm
-  Cross validation and hyperparameter tuning
-  Performance
-  Save and Load
-
-
-.. toctree::
-  :maxdepth: 1
-  :caption: Examples
-
-  Examples
+  Functions
 
 
 .. toctree::
@@ -142,17 +130,9 @@ Indices and tables
     :alt: Project Status
     :target: http://www.repostatus.org/#active
 
-.. |medium| image:: https://img.shields.io/badge/Medium-Blog-green.svg
-    :alt: Medium Blog
-    :target: https://erdogant.github.io/dicter/pages/html/Documentation.html#medium-blog
-
 .. |donate| image:: https://img.shields.io/badge/Support%20this%20project-grey.svg?logo=github%20sponsors
     :alt: donate
     :target: https://erdogant.github.io/dicter/pages/html/Documentation.html#
-
-.. |colab| image:: https://colab.research.google.com/assets/colab-badge.svg
-    :alt: Colab example
-    :target: https://erdogant.github.io/dicter/pages/html/Documentation.html#colab-notebook
 
 .. |DOI| image:: https://zenodo.org/badge/246504758.svg
     :alt: Cite

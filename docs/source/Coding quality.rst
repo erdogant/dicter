@@ -55,18 +55,6 @@ PEP stands for Python Enhancement Proposal and sets a baseline for the readabili
 Each public function contains a docstring that is based on numpy standards.
     
 
-Complexity
-----------
-
-This library has been developed by using measures that help decreasing technical debt.
-Version 0.1.0 of the ``dicter`` library scored, according the code analyzer: **VALUE**, for which values > 0 are good and 10 is a maximum score.
-Developing software with low(er) technical dept may take extra development time, but has many advantages:
-
-* Higher quality code
-* easier maintanable
-* Less prone to bugs and errors
-* Higher security
-
 
 Unit tests
 ----------
@@ -77,22 +65,6 @@ The following tests are secured using :func:`tests.test_dicter`:
 * The input are checked.
 * The output values are checked and whether they are encoded properly.
 * The check of whether parameters are handled correctly.
-
-
-.. code-block:: bash
-
-    pytest tests\test_dicter.py
-
-    ====================================== test session starts ======================================
-    platform win32 -- Python 3.6.10, pytest-5.4.0, py-1.8.1, pluggy-0.13.1
-    collected 3 items
-    
-    tests\test_dicter.py ...                                                                [100%]
-    
-    ======================================= warnings summary ========================================
-    tests/test_dicter.py::test_plot
-    
-    =========================== 3 passed, 1 warning in 1254.97s (0:20:54) ===========================    
 
 
 

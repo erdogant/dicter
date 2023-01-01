@@ -8,7 +8,7 @@ If desired, install ``dicter`` from an isolated Python environment using conda:
 
 .. code-block:: python
 
-    conda create -n env_dicter python=3.8
+    conda create -n env_dicter python=3.10
     conda activate env_dicter
 
 
