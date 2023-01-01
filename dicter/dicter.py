@@ -50,7 +50,7 @@ def get_nested(d: dict, key_path: list):
     > # Import dicter
     > import dicter as dt
     >
-    > Example dictionary
+    > # Example dictionary
     > d = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 3, 'level_d': {'a': 1, 'b': 2, 'c': {'e': 10}}, 'level_e': 2}
     > # Get the value for the nested path for:
     > value = dt.get_nested(d, key_path=["level_a"])
@@ -133,7 +133,7 @@ def set_nested(d: dict, key_path: list, value: str) -> dict:
 
 # %% Traverse all paths in dictionary.
 def path(d: dict, sep: str = '$->$', keys_as_list: bool = True, verbose: [str, int] = 'info') -> list:
-    """Traverse all paths in dictionary.
+    """Traverse through all paths in dictionary.
 
     Parameters
     ----------
@@ -216,7 +216,7 @@ def flatten(d: dict):
     > # Import dicter
     > import dicter as dt
     >
-    > Example dict
+    > # Example dict
     > d = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 3, 'level_d': {'a': 1, 'b': 2, 'c': {'e': 10}}, 'level_e': 2}
     > # Flatten dictionary
     > dflat = dt.flatten(d)
