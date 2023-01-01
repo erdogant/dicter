@@ -7,14 +7,12 @@
 # --------------------------------------------------
 
 import os
-import pandas as pd
 import logging
-import numpy as np
-from tqdm import tqdm
 import json
 from functools import reduce
 from operator import getitem
 import re
+import pandas as pd
 
 logger = logging.getLogger('')
 for handler in logger.handlers[:]:  # get rid of existing old handlers
