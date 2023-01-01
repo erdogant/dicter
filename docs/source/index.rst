@@ -15,7 +15,7 @@ dicter's documentation!
 |python| |pypi| |docs| |stars| |LOC| |downloads_month| |downloads_total| |license| |forks| |open issues| |project status| |DOI| |repo-size| |donate|
 
 
-*dicter* is a Python package with the most wanted dictionary functions:
+*dicter* is a Python package with advanced dictionary functions:
 
 	* Traverse through nested dicts to retrieve key-path.
 	* Set value in dictionary using key-path
