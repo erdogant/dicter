@@ -145,11 +145,11 @@ def path(d: dict, sep: str = '$->$', keys_as_list: bool = True, verbose: [str, i
         False: Output is list with keys seperated with the "sep" string.
     verbose : int, default is 'info' or 20
         Set the verbose messages using string or integer values.
-        * [0, None, 'silent', 'off', 'no']: No message.
-        * [10, 'debug']: Messages from debug level and higher.
-        * [20, 'info']: Messages from info level and higher.
-        * [30, 'warning']: Messages from warning level and higher.
-        * [40, 'critical']: Messages from critical level and higher.
+            * [0, None, 'silent', 'off', 'no']: No message.
+            * [10, 'debug']: Messages from debug level and higher.
+            * [20, 'info']: Messages from info level and higher.
+            * [30, 'warning']: Messages from warning level and higher.
+            * [40, 'critical']: Messages from critical level and higher.
 
     Returns
     -------
@@ -347,11 +347,11 @@ def save(d: dict, filepath: str, overwrite: bool = False, verbose: [str, int] = 
         False: Do not overwrite existing files.
     verbose : int, default is 'info' or 20
         Set the verbose messages using string or integer values.
-        * [0, None, 'silent', 'off', 'no']: No message.
-        * [10, 'debug']: Messages from debug level and higher.
-        * [20, 'info']: Messages from info level and higher.
-        * [30, 'warning']: Messages from warning level and higher.
-        * [40, 'critical']: Messages from critical level and higher.
+            * [0, None, 'silent', 'off', 'no']: No message.
+            * [10, 'debug']: Messages from debug level and higher.
+            * [20, 'info']: Messages from info level and higher.
+            * [30, 'warning']: Messages from warning level and higher.
+            * [40, 'critical']: Messages from critical level and higher.
 
     Returns
     -------
@@ -398,11 +398,11 @@ def load(filepath: str, verbose: str = 'info'):
         path location to json.
     verbose : str, optional
         Set the verbose messages using string or integer values.
-        * [0, None, 'silent', 'off', 'no']: No message.
-        * [10, 'debug']: Messages from debug level and higher.
-        * [20, 'info']: Messages from info level and higher.
-        * [30, 'warning']: Messages from warning level and higher.
-        * [40, 'critical']: Messages from critical level and higher.
+            * [0, None, 'silent', 'off', 'no']: No message.
+            * [10, 'debug']: Messages from debug level and higher.
+            * [20, 'info']: Messages from info level and higher.
+            * [30, 'warning']: Messages from warning level and higher.
+            * [40, 'critical']: Messages from critical level and higher.
 
     Returns
     -------
@@ -440,11 +440,11 @@ def set_logger(verbose: [str, int] = 'info'):
     ----------
     verbose : [str, int], default is 'info' or 20
         Set the verbose messages using string or integer values.
-        * [10, 'debug']: Messages from debug level and higher.
-        * [20, 'info']: Messages from info level and higher.
-        * [30, 'warning']: Messages from warning level and higher.
-        * [50, 'critical']: Messages from critical level and higher.
-        * [60, 0, None, 'silent', 'off', 'no']: No message.
+            * [10, 'debug']: Messages from debug level and higher.
+            * [20, 'info']: Messages from info level and higher.
+            * [30, 'warning']: Messages from warning level and higher.
+            * [50, 'critical']: Messages from critical level and higher.
+            * [60, 0, None, 'silent', 'off', 'no']: No message.
 
     Returns
     -------
