@@ -8,59 +8,6 @@ def adds_in_rst(filehandle):
     filehandle.write("\n   </center>")
     filehandle.write("\n   <hr>")
 
-###################### SCAN DIRECTORY ######################
-def scan_directory(currpath, directory, ext):
-    # Uitlezen op ext
-    path_to_files = os.path.join(currpath, '_static', directory)
-    files_in_dir = np.array(os.listdir(path_to_files))
-    Iloc = np.array(list(map(lambda x: x[-len(ext):]==ext, files_in_dir)))
-    return files_in_dir[Iloc]
-
-###################### EMBED PDF IN RST ######################
-def embed_in_rst(currpath, directory, ext, title, file_rst):
-
-    try:
-        # Uitlezen op extensie
-        files_in_dir = scan_directory(currpath, directory, ext)
-        print('---------------------------------------------------------------')
-        print('[%s] embedding in RST from directory: [%s]' %(ext, directory))
-    
-        # Open file
-        filehandle = open(file_rst, 'w')
-        filehandle.write(".. _code_directive:\n\n" + title + "\n#######################\n\n")
-    
-        # 3. simple concat op 
-        for fname in files_in_dir:
-            print('[%s] processed in rst' %(fname))
-            title = "**" + fname[:-len(ext)] + "**\n"
-            if ext=='.pdf':
-                newstr = ":pdfembed:`src:_static/" + directory + "/" + fname + ", height:600, width:700, align:middle`"
-            elif ext=='.html':
-                newstr = ".. raw:: html\n\n" + '   <iframe src="_static/' + directory + "/" + fname + '"' + ' height="900px" width="750px", frameBorder="0"></iframe>'
-            write_to_rst = title + "\n" + newstr + "\n\n\n\n"
-            # Write to rst
-            filehandle.write(write_to_rst)
-	
-	    # ADDs in RST wegschrijven
-        adds_in_rst(filehandle)
-        # Close file
-        filehandle.close()
-    except:
-        print('ERROR IN EMBEDDING IT IN RST.')
-
-
-###################### CONVERT NOTEBOOKS TO HTML ######################
-def convert_ipynb_to_html(currpath, directory, ext):
-    try:
-        # Uitlezen op extensie
-        files_in_dir = scan_directory(currpath, directory, ext)
-        # 3. simple concat op 
-        for fname in files_in_dir:
-            path_to_file = os.path.join('_static/', directory, fname)
-            print('[%s] converting to HTML' %(path_to_file))
-            os.system('jupyter nbconvert --to html ' + path_to_file)
-    except:
-        print('ERROR IN CONVERTING NOTEBOOK TO HTML.')
 
 #######################################################################
 
@@ -95,14 +42,6 @@ try:
 except:
 	print('Downloading sponsor.rst file failed.')
 
-############## EMBED AND CONVERT ADDITIONAL INFORMATION FOR SHPINX PAGES ##############
-
-# Import PDF from directory in rst files
-embed_in_rst(currpath, 'pdf', '.pdf', "Additional Information", 'Additional_Information.rst')
-
-# Import notebooks in HTML format
-convert_ipynb_to_html(currpath, 'notebooks', '.ipynb')
-embed_in_rst(currpath, 'notebooks', '.html', "Notebook", 'notebook.rst')
 
 ########################################################################################
 
