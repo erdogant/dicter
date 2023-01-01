@@ -9,7 +9,6 @@ from dicter.dicter import (
     load,
     clean_filename,
     set_logger,
-    messages
     )
 
 
