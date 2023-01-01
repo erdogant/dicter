@@ -131,9 +131,9 @@ Indices and tables
     :alt: donate
     :target: https://erdogant.github.io/dicter/pages/html/Documentation.html#
 
-.. |DOI| image:: https://zenodo.org/badge/246504758.svg
+.. |DOI| image:: https://zenodo.org/badge/584101058.svg
     :alt: Cite
-    :target: https://zenodo.org/badge/latestdoi/246504758
+    :target: https://zenodo.org/badge/latestdoi/584101058
 
 .. |repo-size| image:: https://img.shields.io/github/repo-size/erdogant/dicter
     :alt: repo-size
