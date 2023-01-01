@@ -15,6 +15,6 @@ keywords:
 license: "MIT"
 message: "If you use this software, please cite it using these metadata."
 repository-code: "https://github.com/erdogant/dicter"
-title: "Dicter is a Python package with helpfull dictionary functions."
+title: "dicter is a Python package with advanced dictionary functions."
 version: "0.1.0"
 ...

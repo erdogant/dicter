@@ -24,7 +24,7 @@
 <!---[![Coffee](https://img.shields.io/badge/coffee-black-grey.svg)](https://erdogant.github.io/donate/?currency=USD&amount=5)-->
 
 
-* ``dicter`` is Python package with dictionary functions:
+* ``dicter`` is Python package with advanced dictionary functions:
 
 	* Traverse through nested dicts to retrieve key-path.
 	* Set value in dictionary using key-path

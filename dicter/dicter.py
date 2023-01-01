@@ -1,10 +1,11 @@
-# --------------------------------------------------
+"""dicter is a Python package with advanced dictionary functions.
+
 # Name        : dicter.py
 # Author      : E.Taskesen
 # Contact     : erdogant@gmail.com
 # github      : https://github.com/erdogant/dicter
-# Licence     : See licences
-# --------------------------------------------------
+# Licence     : MIT
+"""
 
 import os
 import logging
@@ -15,10 +16,9 @@ import re
 import pandas as pd
 
 logger = logging.getLogger('')
-for handler in logger.handlers[:]:  # get rid of existing old handlers
+for handler in logger.handlers[:]:
     logger.removeHandler(handler)
 console = logging.StreamHandler()
-# formatter = logging.Formatter('[%(asctime)s] [dicter]> %(levelname)s> %(message)s', datefmt='%H:%M:%S')
 formatter = logging.Formatter('[dicter] >%(levelname)s> %(message)s')
 console.setFormatter(formatter)
 logger.addHandler(console)
@@ -223,7 +223,7 @@ def flatten(d: dict):
 
     """
     def _flatten(d: dict, dflat: list = []):
-        for k,v in d.items():        
+        for k, v in d.items():
             if isinstance(v, dict):
                 # print (k,":",v)
                 _flatten(v, dflat=dflat)
@@ -389,7 +389,7 @@ def save(d: dict, filepath: str, overwrite: bool = False, verbose: [str, int] = 
 
 
 # %% Load
-def load(filepath: str, verbose: str = 'info'):
+def load(filepath: str, verbose: [str, int] = 'info'):
     """Load dictionary from json file.
 
     Parameters
