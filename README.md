@@ -34,14 +34,14 @@
 **Star this repo if you like it! ⭐️**
 #
 
-## Blog/Documentation
+## Documentation
 
 * [**dicter documentation pages (Sphinx)**](https://erdogant.github.io/dicter/)
 
 * <a href="https://erdogant.github.io/dicter/"> <img src="https://img.shields.io/badge/Sphinx-Docs-Green" alt="Open documentation pages"/> </a> dicter documentation pages 
 
 
-### Installation
+## Installation
 * Install dicter from PyPI (recommended). dicter is compatible with Python 3.6+ and runs on Linux, MacOS X and Windows. 
 * A new environment can be created as following:
 
@@ -56,6 +56,7 @@ pip install -U dicter
 pip install git+https://github.com/erdogant/dicter
 ```
 
+## Examples
 
 #### Import dicter package
 ```python
@@ -165,6 +166,22 @@ d2 = {'level_a': 1, 'level_b': {'a': 'modified'}}
 out = dt.compare(d1, d2)
 print(out['modified'])
 
+```
+
+#### Save and load dictionary.
+```python
+
+# Import dicter
+import dicter as dt
+
+d = {'level_a': None, 'level_b': {'a': 'hello world'}, 'level_c': True, 'level_d': 2.3, 'level_e': [[1,2,3], [1,2]]}
+filepath='c:/temp/test/dicter_save.json'
+
+# First save
+dt.save(d, filepath=filepath, overwrite=True)
+
+# Load
+d = dt.load(filepath)
 ```
 
 
