@@ -1,0 +1,2 @@
+https://app.codecov.io/gh/erdogant/dicter/settings
+https://github.com/settings/installations/14504510

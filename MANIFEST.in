@@ -1,0 +1,2 @@
+include dicter/data/*.zip
+include dicter/data/*.txt

@@ -6,7 +6,11 @@ __pycache__/
 # C extensions
 *.so
 
+# ignore dirs
+libraries/
+
 # Distribution / packaging
+.pylint.*
 .Python
 build/
 develop-eggs/
@@ -127,3 +131,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+.pylint.*
