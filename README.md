@@ -1,4 +1,10 @@
-# dicter
+
+<p align="center">
+  <a href="https://erdogant.github.io/dicter/">
+  <img src="https://github.com/erdogant/dicter/blob/master/docs/figs/logo.png" width="600" />
+  </a>
+</p>
+
 
 [![Python](https://img.shields.io/pypi/pyversions/dicter)](https://img.shields.io/pypi/pyversions/dicter)
 [![Pypi](https://img.shields.io/pypi/v/dicter)](https://pypi.org/project/dicter/)
