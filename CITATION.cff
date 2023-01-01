@@ -10,9 +10,11 @@ date-released: 2020-10-07
 keywords: 
   - "python"
   - "dicter"
+  - "dictionary"
+  - "nested keys"
 license: "MIT"
 message: "If you use this software, please cite it using these metadata."
 repository-code: "https://github.com/erdogant/dicter"
-title: "dicter"
+title: "Dicter is a Python package with helpfull dictionary functions."
 version: "0.1.0"
 ...

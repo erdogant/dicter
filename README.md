@@ -20,13 +20,14 @@
 <!---[![Coffee](https://img.shields.io/badge/coffee-black-grey.svg)](https://erdogant.github.io/donate/?currency=USD&amount=5)-->
 
 
+* ``dicter`` is Python package with dictionary functions;
+
+	* Traverse through nested dicts.
+	* Set and get multiple keys.
+	* Flattens dicts.
+	* Store and load in json.
 
 
-
-<!---[![BuyMeCoffee](https://img.shields.io/badge/buymea-coffee-yellow.svg)](https://www.buymeacoffee.com/erdogant)-->
-<!---[![Coffee](https://img.shields.io/badge/coffee-black-grey.svg)](https://erdogant.github.io/donate/?currency=USD&amount=5)-->
-
-* ``dicter`` is Python package
 
 # 
 **Star this repo if you like it! ⭐️**
@@ -36,12 +37,7 @@
 ## Blog/Documentation
 
 * [**dicter documentation pages (Sphinx)**](https://erdogant.github.io/dicter/)
-* [**Notebook with examples**](https://colab.research.google.com/github/erdogant/dicter/blob/master/notebooks/dicter.ipynb)
-* [**Read more details and usage about dicter in this blog!**](https://towardsdatascience.com/dicter)
 
-* <a href="https://erdogant.github.io/dicter/"> <img src="https://img.shields.io/badge/Sphinx-Docs-Green" alt="Open documentation pages"/> </a> dicter documentation pages 
-* <a href="https://colab.research.google.com/github/erdogant/dicter/blob/master/notebooks/dicter.ipynb"> <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open example In Colab"/> </a> Notebook example 
-* <a href="https://towardsdatascience.com/a-step-by-step-guide-for-clustering-images-4b45f9906128"> <img src="https://img.shields.io/badge/Medium-Blog-blue" alt="Open Blog"/> </a> Blog: A step-by-step guide for clustering images 
 
 
 ### Contents
@@ -68,8 +64,6 @@ pip install --upgrade dicter # or update if needed
 * Alternatively, you can install from the GitHub source:
 ```bash
 # Directly install from github source
-pip install -e git://github.com/erdogant/dicter.git@0.1.0#egg=master
-pip install git+https://github.com/erdogant/dicter#egg=master
 pip install git+https://github.com/erdogant/dicter
 
 # By cloning
