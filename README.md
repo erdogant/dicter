@@ -1,7 +1,7 @@
 
 <p align="center">
   <a href="https://erdogant.github.io/dicter/">
-  <img src="https://github.com/erdogant/dicter/blob/main/docs/figs/logo.png" width="600" />
+  <img src="https://github.com/erdogant/dicter/blob/main/docs/figs/logo.png" width="400" />
   </a>
 </p>
 
