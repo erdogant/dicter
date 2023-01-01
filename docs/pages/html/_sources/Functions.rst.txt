@@ -1,14 +1,12 @@
-Get
+Get Nested
 #############
-
-Get nested value from dictionary.
 
 .. automodule:: dicter.dicter.get_nested
     :members:
     :undoc-members:
 
 
-Set
+Set Nested
 ################################################################
 
 Set nested value from dictionary.
@@ -21,8 +19,6 @@ Set nested value from dictionary.
 Path
 ################################################################
 
-Traverse through all paths in dictionary.
-
 .. automodule:: dicter.dicter.path
     :members:
     :undoc-members:
@@ -32,8 +28,6 @@ Traverse through all paths in dictionary.
 Flatten
 ################################################################
 
-Flatten dictionary to the deepest level and return key-value.
-
 .. automodule:: dicter.dicter.flatten
     :members:
     :undoc-members:
@@ -41,8 +35,6 @@ Flatten dictionary to the deepest level and return key-value.
 
 Depth
 ################################################################
-
-Depth of dictionary
 
 .. automodule:: dicter.dicter.depth
     :members:
@@ -53,8 +45,6 @@ Depth of dictionary
 Compare
 ################################################################
 
-Compare two dictionaries.
-
 .. automodule:: dicter.dicter.compare
     :members:
     :undoc-members:
@@ -63,8 +53,6 @@ Compare two dictionaries.
 Save
 ################################################################
 
-Save dictionary to json.
-
 .. automodule:: dicter.dicter.save
     :members:
     :undoc-members:
@@ -72,8 +60,6 @@ Save dictionary to json.
 
 Load
 ################################################################
-
-Load dictionary from json file.
 
 .. automodule:: dicter.dicter.load
     :members:
