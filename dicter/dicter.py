@@ -325,10 +325,10 @@ def compare(d1: dict, d2: dict):
     modified = {o: (d1[o], d2[o]) for o in shared_keys if d1[o] != d2[o]}
     same = set(o for o in shared_keys if d1[o] == d2[o])
     # Some cleaning
-    added=None if len(added)==0 else added
-    removed=None if len(removed)==0 else removed
-    modified=None if len(modified)==0 else modified
-    same=None if len(same)==0 else same
+    added=None if len(added)==0 else list(added)
+    removed=None if len(removed)==0 else list(removed)
+    modified=None if len(modified)==0 else list(modified)
+    same=None if len(same)==0 else list(same)
     return {'added': added, 'removed': removed, 'modified': modified, 'similar': same}
 
 
