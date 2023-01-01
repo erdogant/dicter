@@ -1,8 +1,15 @@
-from XXX.XXX import XXX
-
-from XXX.XXX import (
-    import_example,
-    load_example,
+from dicter.dicter import (
+    set_nested,
+    get_nested,
+    path,
+    flatten,
+    depth,
+    compare,
+    save,
+    load,
+    clean_filename,
+    set_logger,
+    messages
     )
 
 
@@ -12,21 +19,21 @@ __version__ = '0.1.0'
 
 # module level doc-string
 __doc__ = """
-XXX
+dicter
 =====================================================================
 
 Description
 -----------
-XXX is for...
+dicter is for...
 
 Example
 -------
->>> import XXX as XXX
->>> model = XXX.fit_transform(X)
->>> fig,ax = XXX.plot(model)
+>>> import dicter as dicter
+>>> model = dicter.fit_transform(X)
+>>> fig,ax = dicter.plot(model)
 
 References
 ----------
-https://github.com/erdogant/XXX
+https://github.com/erdogant/dicter
 
 """
