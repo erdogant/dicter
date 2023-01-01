@@ -45,27 +45,27 @@ def get_nested(d: dict, key_path: list):
 
     Examples
     --------
-    > # Import dicter
-    > import dicter as dt
-    >
-    > # Example dictionary
-    > d = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 3, 'level_d': {'a': 1, 'b': 2, 'c': {'e': 10}}, 'level_e': 2}
-    > # Get the value for the nested path for:
-    > value = dt.get_nested(d, key_path=["level_a"])
-    > print(value)  # 1
-    >
-    > # Get the value for the nested path for:
-    > value = dt.get_nested(d, key_path=["level_b","a"])
-    > print(value)  # hello world
-    >
-    > # Get the value for the nested path for:
-    > value = dt.get_nested(d, key_path=["level_d","c", "e"])
-    > print(value)  # 10
-    >
-    > # Get the value for the nested path for a list:
-    > l = [[[1,2,3],[10,20,30]]]
-    > value = dt.get_nested(l, key_path=[0,1,2])    # => 30
-    > print(value)  # 30
+    >>> # Import dicter
+    >>> import dicter as dt
+    >>> #
+    >>> # Example dictionary
+    >>> d = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 3, 'level_d': {'a': 1, 'b': 2, 'c': {'e': 10}}, 'level_e': 2}
+    >>> # Get the value for the nested path for:
+    >>> value = dt.get_nested(d, key_path=["level_a"])
+    >>> print(value)  # 1
+    >>> #
+    >>> # Get the value for the nested path for:
+    >>> value = dt.get_nested(d, key_path=["level_b","a"])
+    >>> print(value)  # hello world
+    >>> #
+    >>> # Get the value for the nested path for:
+    >>> value = dt.get_nested(d, key_path=["level_d","c", "e"])
+    >>> print(value)  # 10
+    >>> #
+    >>> # Get the value for the nested path for a list:
+    >>> l = [[[1,2,3],[10,20,30]]]
+    >>> value = dt.get_nested(l, key_path=[0,1,2])    # =>>> 30
+    >>> print(value)  # 30
 
     """
     value = None
@@ -96,32 +96,32 @@ def set_nested(d: dict, key_path: list, value: str) -> dict:
 
     Examples
     --------
-    > # Import dicter
-    > import dicter as dt
-    >
-    > # Example: New path and value in dictionary.
-    > d = {}
-    > key_path = ['person', 'address', 'city']
-    > dt.set_nested(d, key_path, 'New York')
-    > # Print updated dictionary
-    > print(d)
-    > # {'person': {'address': {'city': 'New York'}}}
-    > #
-    > # Example: Update value in path.
-    > d = {'person': {'address': {'city': 'New York'}}}
-    > key_path = ['person', 'address', 'city']
-    > dt.set_nested(d, key_path, 'Amsterdam')
-    > # Print updated dictionary
-    > print(d)
-    > # {'person': {'address': {'city': 'Amsterdam'}}, 'person_2': {'address': {'city': 'Amsterdam'}}}
-    > #
-    > # Example: New path with value.
-    > d = {'person': {'address': {'city': 'New York'}}}
-    > key_path = ['person_2', 'address', 'city']
-    > dt.set_nested(d, key_path, 'Amsterdam')
-    > # Print updated dictionary
-    > print(d)
-    > # {'person': {'address': {'city': 'New York'}}, 'person_2': {'address': {'city': 'Amsterdam'}}}
+    >>> # Import dicter
+    >>> import dicter as dt
+    >>> #
+    >>> # Example: New path and value in dictionary.
+    >>> d = {}
+    >>> key_path = ['person', 'address', 'city']
+    >>> dt.set_nested(d, key_path, 'New York')
+    >>> # Print updated dictionary
+    >>> print(d)
+    >>> # {'person': {'address': {'city': 'New York'}}}
+    >>> #
+    >>> # Example: Update value in path.
+    >>> d = {'person': {'address': {'city': 'New York'}}}
+    >>> key_path = ['person', 'address', 'city']
+    >>> dt.set_nested(d, key_path, 'Amsterdam')
+    >>> # Print updated dictionary
+    >>> print(d)
+    >>> # {'person': {'address': {'city': 'Amsterdam'}}, 'person_2': {'address': {'city': 'Amsterdam'}}}
+    >>> #
+    >>> # Example: New path with value.
+    >>> d = {'person': {'address': {'city': 'New York'}}}
+    >>> key_path = ['person_2', 'address', 'city']
+    >>> dt.set_nested(d, key_path, 'Amsterdam')
+    >>> # Print updated dictionary
+    >>> print(d)
+    >>> # {'person': {'address': {'city': 'New York'}}, 'person_2': {'address': {'city': 'Amsterdam'}}}
 
     """
     for k in key_path[:-1]:
@@ -158,27 +158,27 @@ def path(d: dict, sep: str = '$->$', keys_as_list: bool = True, verbose: [str, i
 
     Examples
     --------
-    > # Import dicter
-    > import dicter as dt
-    >
-    > Example dict
-    > d = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 3, 'level_d': {'a': 1, 'b': 2, 'c': {'e': 10}}, 'level_e': 2}
-    > # Traverse all paths in dictionary
-    > paths = dt.path(d)
-    >
-    > print(paths)
-    > # [[['level_a'], 1],
-    > # [['level_c'], 3],
-    > # [['level_e'], 2],
-    > # [['level_b', 'a'], 'hello world'],
-    > # [['level_d', 'a'], 1],
-    > # [['level_d', 'b'], 2],
-    > # [['level_d', 'c', 'e'], 10]]
-    >
-    > # Example to retrieve value from a dictionary using key path
-    > key_paths = list(map(lambda x: x[0], paths))
-    > value = dt.get_nested(d, key_paths[3])  # ['level_b', 'a']
-    > print(value)  # hello world
+    >>> # Import dicter
+    >>> import dicter as dt
+    >>> #
+    >>> Example dict
+    >>> d = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 3, 'level_d': {'a': 1, 'b': 2, 'c': {'e': 10}}, 'level_e': 2}
+    >>> # Traverse all paths in dictionary
+    >>> paths = dt.path(d)
+    >>> #
+    >>> print(paths)
+    >>> # [[['level_a'], 1],
+    >>> # [['level_c'], 3],
+    >>> # [['level_e'], 2],
+    >>> # [['level_b', 'a'], 'hello world'],
+    >>> # [['level_d', 'a'], 1],
+    >>> # [['level_d', 'b'], 2],
+    >>> # [['level_d', 'c', 'e'], 10]]
+    >>> #
+    >>> # Example to retrieve value from a dictionary using key path
+    >>> key_paths = list(map(lambda x: x[0], paths))
+    >>> value = dt.get_nested(d, key_paths[3])  # ['level_b', 'a']
+    >>> print(value)  # hello world
 
     """
     set_logger(verbose)
@@ -211,15 +211,15 @@ def flatten(d: dict):
 
     Examples
     --------
-    > # Import dicter
-    > import dicter as dt
-    >
-    > # Example dict
-    > d = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 3, 'level_d': {'a': 1, 'b': 2, 'c': {'e': 10}}, 'level_e': 2}
-    > # Flatten dictionary
-    > dflat = dt.flatten(d)
-    >
-    > print(d_flat)
+    >>> # Import dicter
+    >>> import dicter as dt
+    >>> #
+    >>> # Example dict
+    >>> d = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 3, 'level_d': {'a': 1, 'b': 2, 'c': {'e': 10}}, 'level_e': 2}
+    >>> # Flatten dictionary
+    >>> dflat = dt.flatten(d)
+    >>> #
+    >>> print(d_flat)
 
     """
     def _flatten(d: dict, dflat: list = []):
@@ -252,12 +252,12 @@ def depth(d: dict):
 
     Examples
     --------
-    > # Import dicter
-    > import dicter as dt
-    >
-    > Example dict
-    > d = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 3, 'level_d': {'a': 1, 'b': 2, 'c': {'e': 10}}, 'level_e': 2}
-    > n = dt.depth(d)
+    >>> # Import dicter
+    >>> import dicter as dt
+    >>> #
+    >>> Example dict
+    >>> d = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 3, 'level_d': {'a': 1, 'b': 2, 'c': {'e': 10}}, 'level_e': 2}
+    >>> n = dt.depth(d)
 
     """
     if isinstance(d, dict):
@@ -294,26 +294,26 @@ def compare(d1: dict, d2: dict):
 
     Examples
     --------
-    > # Import dicter
-    > import dicter as dt
-    >
-    > Example: Add
-    > d1 = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 'new in d2'}
-    > d2 = {'level_a': 1, 'level_b': {'a': 'hello world'}}
-    > out = dt.compare(d1, d2)
-    > print(out)
-    >
-    > Example: Remove
-    > d1 = {'level_a': 1, 'level_b': {'a': 'hello world'}}
-    > d2 = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 'new in d2'}
-    > out = dt.compare(d1, d2)
-    > print(out)
-    >
-    > Example: Modified
-    > d1 = {'level_a': 1, 'level_b': {'a': 'hello world'}}
-    > d2 = {'level_a': 1, 'level_b': {'a': 'modified'}}
-    > out = dt.compare(d1, d2)
-    > print(out['modified'])
+    >>> # Import dicter
+    >>> import dicter as dt
+    >>> #
+    >>> Example: Add
+    >>> d1 = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 'new in d2'}
+    >>> d2 = {'level_a': 1, 'level_b': {'a': 'hello world'}}
+    >>> out = dt.compare(d1, d2)
+    >>> print(out)
+    >>> #
+    >>> Example: Remove
+    >>> d1 = {'level_a': 1, 'level_b': {'a': 'hello world'}}
+    >>> d2 = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 'new in d2'}
+    >>> out = dt.compare(d1, d2)
+    >>> print(out)
+    >>> #
+    >>> Example: Modified
+    >>> d1 = {'level_a': 1, 'level_b': {'a': 'hello world'}}
+    >>> d2 = {'level_a': 1, 'level_b': {'a': 'modified'}}
+    >>> out = dt.compare(d1, d2)
+    >>> print(out['modified'])
     >
 
     """
@@ -361,11 +361,11 @@ def save(d: dict, filepath: str, overwrite: bool = False, verbose: [str, int] = 
 
     Examples
     --------
-    > # Import dicter
-    > import dicter as dt
+    >>> # Import dicter
+    >>> import dicter as dt
     >
-    > d = {'level_a': None, 'level_b': {'a': 'hello world'}, 'level_c': True, 'level_d': 2.3, 'level_e': [[1,2,3], [1,2]]}
-    > dt.save(d, filepath='c:/temp/test/dicter_save.json', overwrite=True)
+    >>> d = {'level_a': None, 'level_b': {'a': 'hello world'}, 'level_c': True, 'level_d': 2.3, 'level_e': [[1,2,3], [1,2]]}
+    >>> dt.save(d, filepath='c:/temp/test/dicter_save.json', overwrite=True)
 
     """
     # Set the logger
@@ -411,15 +411,15 @@ def load(filepath: str, verbose: str = 'info'):
 
     Examples
     --------
-    > # Import dicter
-    > import dicter as dt
-    >
-    > d = {'level_a': None, 'level_b': {'a': 'hello world'}, 'level_c': True, 'level_d': 2.3, 'level_e': [[1,2,3], [1,2]]}
-    > filepath='c:/temp/test/dicter_save.json'
-    > # First save
-    > dt.save(d, filepath=filepath, overwrite=True)
-    > # Load
-    > d = dt.load(filepath)
+    >>> # Import dicter
+    >>> import dicter as dt
+    >>> #
+    >>> d = {'level_a': None, 'level_b': {'a': 'hello world'}, 'level_c': True, 'level_d': 2.3, 'level_e': [[1,2,3], [1,2]]}
+    >>> filepath='c:/temp/test/dicter_save.json'
+    >>> # First save
+    >>> dt.save(d, filepath=filepath, overwrite=True)
+    >>> # Load
+    >>> d = dt.load(filepath)
 
     """
     d = None
@@ -452,13 +452,13 @@ def set_logger(verbose: [str, int] = 'info'):
 
     Examples
     --------
-    > # Set the logger to warning
-    > set_logger(verbose='warning')
-    > # Test with different messages
-    > logger.debug("Hello debug")
-    > logger.info("Hello info")
-    > logger.warning("Hello warning")
-    > logger.critical("Hello critical")
+    >>> # Set the logger to warning
+    >>> set_logger(verbose='warning')
+    >>> # Test with different messages
+    >>> logger.debug("Hello debug")
+    >>> logger.info("Hello info")
+    >>> logger.warning("Hello warning")
+    >>> logger.critical("Hello critical")
 
     """
     # Set 0 and None as no messages.
