@@ -1,13 +1,10 @@
-dicter's documentation!
-========================
-
-.. |fig1| image:: ../figs/logo.png
+.. |logo| image:: ../figs/logo.png
 
 .. table::
    :align: center
 
    +----------+
-   | |fig1|   |
+   | |logo|   |
    +----------+
 
 -----------------------------------
