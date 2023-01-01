@@ -127,27 +127,29 @@
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>&gt; # Import dicter
-&gt; import dicter as dt
-&gt;
-&gt; # Example dictionary
-&gt; d = {‘level_a’: 1, ‘level_b’: {‘a’: ‘hello world’}, ‘level_c’: 3, ‘level_d’: {‘a’: 1, ‘b’: 2, ‘c’: {‘e’: 10}}, ‘level_e’: 2}
-&gt; # Get the value for the nested path for:
-&gt; value = dt.get_nested(d, key_path=[“level_a”])
-&gt; print(value)  # 1
-&gt;
-&gt; # Get the value for the nested path for:
-&gt; value = dt.get_nested(d, key_path=[“level_b”,”a”])
-&gt; print(value)  # hello world
-&gt;
-&gt; # Get the value for the nested path for:
-&gt; value = dt.get_nested(d, key_path=[“level_d”,”c”, “e”])
-&gt; print(value)  # 10
-&gt;
-&gt; # Get the value for the nested path for a list:
-&gt; l = [[[1,2,3],[10,20,30]]]
-&gt; value = dt.get_nested(l, key_path=[0,1,2])    # =&gt; 30
-&gt; print(value)  # 30</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Import dicter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">dicter</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example dictionary</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span><span class="p">},</span> <span class="s1">&#39;level_c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;level_d&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}},</span> <span class="s1">&#39;level_e&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get the value for the nested path for:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">get_nested</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">key_path</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;level_a&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># 1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get the value for the nested path for:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">get_nested</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">key_path</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;level_b&quot;</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># hello world</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get the value for the nested path for:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">get_nested</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">key_path</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;level_d&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># 10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get the value for the nested path for a list:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">get_nested</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">key_path</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>    <span class="c1"># =&gt;&gt;&gt; 30</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># 30</span>
+</pre></div>
+</div>
 </section>
 <section id="set">
 <h1>Set<a class="headerlink" href="#set" title="Permalink to this heading"></a></h1>
@@ -177,32 +179,34 @@
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>&gt; # Import dicter
-&gt; import dicter as dt
-&gt;
-&gt; # Example: New path and value in dictionary.
-&gt; d = {}
-&gt; key_path = [‘person’, ‘address’, ‘city’]
-&gt; dt.set_nested(d, key_path, ‘New York’)
-&gt; # Print updated dictionary
-&gt; print(d)
-&gt; # {‘person’: {‘address’: {‘city’: ‘New York’}}}
-&gt; #
-&gt; # Example: Update value in path.
-&gt; d = {‘person’: {‘address’: {‘city’: ‘New York’}}}
-&gt; key_path = [‘person’, ‘address’, ‘city’]
-&gt; dt.set_nested(d, key_path, ‘Amsterdam’)
-&gt; # Print updated dictionary
-&gt; print(d)
-&gt; # {‘person’: {‘address’: {‘city’: ‘Amsterdam’}}, ‘person_2’: {‘address’: {‘city’: ‘Amsterdam’}}}
-&gt; #
-&gt; # Example: New path with value.
-&gt; d = {‘person’: {‘address’: {‘city’: ‘New York’}}}
-&gt; key_path = [‘person_2’, ‘address’, ‘city’]
-&gt; dt.set_nested(d, key_path, ‘Amsterdam’)
-&gt; # Print updated dictionary
-&gt; print(d)
-&gt; # {‘person’: {‘address’: {‘city’: ‘New York’}}, ‘person_2’: {‘address’: {‘city’: ‘Amsterdam’}}}</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Import dicter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">dicter</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example: New path and value in dictionary.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">key_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;person&#39;</span><span class="p">,</span> <span class="s1">&#39;address&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span><span class="o">.</span><span class="n">set_nested</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">key_path</span><span class="p">,</span> <span class="s1">&#39;New York&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Print updated dictionary</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># {&#39;person&#39;: {&#39;address&#39;: {&#39;city&#39;: &#39;New York&#39;}}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example: Update value in path.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;address&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;New York&#39;</span><span class="p">}}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">key_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;person&#39;</span><span class="p">,</span> <span class="s1">&#39;address&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span><span class="o">.</span><span class="n">set_nested</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">key_path</span><span class="p">,</span> <span class="s1">&#39;Amsterdam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Print updated dictionary</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># {&#39;person&#39;: {&#39;address&#39;: {&#39;city&#39;: &#39;Amsterdam&#39;}}, &#39;person_2&#39;: {&#39;address&#39;: {&#39;city&#39;: &#39;Amsterdam&#39;}}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example: New path with value.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;address&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;New York&#39;</span><span class="p">}}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">key_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;person_2&#39;</span><span class="p">,</span> <span class="s1">&#39;address&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span><span class="o">.</span><span class="n">set_nested</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">key_path</span><span class="p">,</span> <span class="s1">&#39;Amsterdam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Print updated dictionary</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># {&#39;person&#39;: {&#39;address&#39;: {&#39;city&#39;: &#39;New York&#39;}}, &#39;person_2&#39;: {&#39;address&#39;: {&#39;city&#39;: &#39;Amsterdam&#39;}}}</span>
+</pre></div>
+</div>
 </section>
 <section id="path">
 <h1>Path<a class="headerlink" href="#path" title="Permalink to this heading"></a></h1>
@@ -248,27 +252,29 @@ False: Output is list with keys seperated with the “sep” string.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>&gt; # Import dicter
-&gt; import dicter as dt
-&gt;
-&gt; Example dict
-&gt; d = {‘level_a’: 1, ‘level_b’: {‘a’: ‘hello world’}, ‘level_c’: 3, ‘level_d’: {‘a’: 1, ‘b’: 2, ‘c’: {‘e’: 10}}, ‘level_e’: 2}
-&gt; # Traverse all paths in dictionary
-&gt; paths = dt.path(d)
-&gt;
-&gt; print(paths)
-&gt; # [[[‘level_a’], 1],
-&gt; # [[‘level_c’], 3],
-&gt; # [[‘level_e’], 2],
-&gt; # [[‘level_b’, ‘a’], ‘hello world’],
-&gt; # [[‘level_d’, ‘a’], 1],
-&gt; # [[‘level_d’, ‘b’], 2],
-&gt; # [[‘level_d’, ‘c’, ‘e’], 10]]
-&gt;
-&gt; # Example to retrieve value from a dictionary using key path
-&gt; key_paths = list(map(lambda x: x[0], paths))
-&gt; value = dt.get_nested(d, key_paths[3])  # [‘level_b’, ‘a’]
-&gt; print(value)  # hello world</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Import dicter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">dicter</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Example</span> <span class="nb">dict</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span><span class="p">},</span> <span class="s1">&#39;level_c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;level_d&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}},</span> <span class="s1">&#39;level_e&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Traverse all paths in dictionary</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">paths</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># [[[&#39;level_a&#39;], 1],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># [[&#39;level_c&#39;], 3],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># [[&#39;level_e&#39;], 2],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># [[&#39;level_b&#39;, &#39;a&#39;], &#39;hello world&#39;],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># [[&#39;level_d&#39;, &#39;a&#39;], 1],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># [[&#39;level_d&#39;, &#39;b&#39;], 2],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># [[&#39;level_d&#39;, &#39;c&#39;, &#39;e&#39;], 10]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example to retrieve value from a dictionary using key path</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">key_paths</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">paths</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">get_nested</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">key_paths</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># [&#39;level_b&#39;, &#39;a&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># hello world</span>
+</pre></div>
+</div>
 </section>
 <section id="flatten">
 <h1>Flatten<a class="headerlink" href="#flatten" title="Permalink to this heading"></a></h1>
@@ -289,15 +295,17 @@ False: Output is list with keys seperated with the “sep” string.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>&gt; # Import dicter
-&gt; import dicter as dt
-&gt;
-&gt; # Example dict
-&gt; d = {‘level_a’: 1, ‘level_b’: {‘a’: ‘hello world’}, ‘level_c’: 3, ‘level_d’: {‘a’: 1, ‘b’: 2, ‘c’: {‘e’: 10}}, ‘level_e’: 2}
-&gt; # Flatten dictionary
-&gt; dflat = dt.flatten(d)
-&gt;
-&gt; print(d_flat)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Import dicter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">dicter</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example dict</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span><span class="p">},</span> <span class="s1">&#39;level_c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;level_d&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}},</span> <span class="s1">&#39;level_e&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Flatten dictionary</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dflat</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">d_flat</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 <section id="depth">
 <h1>Depth<a class="headerlink" href="#depth" title="Permalink to this heading"></a></h1>
@@ -318,12 +326,14 @@ False: Output is list with keys seperated with the “sep” string.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>&gt; # Import dicter
-&gt; import dicter as dt
-&gt;
-&gt; Example dict
-&gt; d = {‘level_a’: 1, ‘level_b’: {‘a’: ‘hello world’}, ‘level_c’: 3, ‘level_d’: {‘a’: 1, ‘b’: 2, ‘c’: {‘e’: 10}}, ‘level_e’: 2}
-&gt; n = dt.depth(d)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Import dicter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">dicter</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Example</span> <span class="nb">dict</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span><span class="p">},</span> <span class="s1">&#39;level_c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;level_d&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}},</span> <span class="s1">&#39;level_e&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">depth</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 <section id="compare">
 <h1>Compare<a class="headerlink" href="#compare" title="Permalink to this heading"></a></h1>
@@ -355,27 +365,29 @@ False: Output is list with keys seperated with the “sep” string.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>&gt; # Import dicter
-&gt; import dicter as dt
-&gt;
-&gt; Example: Add
-&gt; d1 = {‘level_a’: 1, ‘level_b’: {‘a’: ‘hello world’}, ‘level_c’: ‘new in d2’}
-&gt; d2 = {‘level_a’: 1, ‘level_b’: {‘a’: ‘hello world’}}
-&gt; out = dt.compare(d1, d2)
-&gt; print(out)
-&gt;
-&gt; Example: Remove
-&gt; d1 = {‘level_a’: 1, ‘level_b’: {‘a’: ‘hello world’}}
-&gt; d2 = {‘level_a’: 1, ‘level_b’: {‘a’: ‘hello world’}, ‘level_c’: ‘new in d2’}
-&gt; out = dt.compare(d1, d2)
-&gt; print(out)
-&gt;
-&gt; Example: Modified
-&gt; d1 = {‘level_a’: 1, ‘level_b’: {‘a’: ‘hello world’}}
-&gt; d2 = {‘level_a’: 1, ‘level_b’: {‘a’: ‘modified’}}
-&gt; out = dt.compare(d1, d2)
-&gt; print(out[‘modified’])
-&gt;</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Import dicter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">dicter</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Example</span><span class="p">:</span> <span class="n">Add</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span><span class="p">},</span> <span class="s1">&#39;level_c&#39;</span><span class="p">:</span> <span class="s1">&#39;new in d2&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span><span class="p">}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">out</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Example</span><span class="p">:</span> <span class="n">Remove</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span><span class="p">}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span><span class="p">},</span> <span class="s1">&#39;level_c&#39;</span><span class="p">:</span> <span class="s1">&#39;new in d2&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">out</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Example</span><span class="p">:</span> <span class="n">Modified</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span><span class="p">}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;modified&#39;</span><span class="p">}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">out</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="p">[</span><span class="s1">&#39;modified&#39;</span><span class="p">])</span>
+<span class="go">&gt;</span>
+</pre></div>
+</div>
 </section>
 </section>
 <section id="save">
@@ -422,11 +434,13 @@ False: Nothing is written to disk.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>&gt; # Import dicter
-&gt; import dicter as dt
-&gt;
-&gt; d = {‘level_a’: None, ‘level_b’: {‘a’: ‘hello world’}, ‘level_c’: True, ‘level_d’: 2.3, ‘level_e’: [[1,2,3], [1,2]]}
-&gt; dt.save(d, filepath=’c:/temp/test/dicter_save.json’, overwrite=True)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Import dicter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">dicter</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="go">&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span><span class="p">},</span> <span class="s1">&#39;level_c&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;level_d&#39;</span><span class="p">:</span> <span class="mf">2.3</span><span class="p">,</span> <span class="s1">&#39;level_e&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">filepath</span><span class="o">=</span><span class="s1">&#39;c:/temp/test/dicter_save.json&#39;</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 <section id="load">
 <h1>Load<a class="headerlink" href="#load" title="Permalink to this heading"></a></h1>
@@ -458,15 +472,17 @@ False: Nothing is written to disk.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>&gt; # Import dicter
-&gt; import dicter as dt
-&gt;
-&gt; d = {‘level_a’: None, ‘level_b’: {‘a’: ‘hello world’}, ‘level_c’: True, ‘level_d’: 2.3, ‘level_e’: [[1,2,3], [1,2]]}
-&gt; filepath=’c:/temp/test/dicter_save.json’
-&gt; # First save
-&gt; dt.save(d, filepath=filepath, overwrite=True)
-&gt; # Load
-&gt; d = dt.load(filepath)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Import dicter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">dicter</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span><span class="p">},</span> <span class="s1">&#39;level_c&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;level_d&#39;</span><span class="p">:</span> <span class="mf">2.3</span><span class="p">,</span> <span class="s1">&#39;level_e&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filepath</span><span class="o">=</span><span class="s1">&#39;c:/temp/test/dicter_save.json&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># First save</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">filepath</span><span class="o">=</span><span class="n">filepath</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Load</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+</pre></div>
+</div>
 <hr>
 <center>
         <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEADP27U&placement=erdogantgithubio" id="_carbonads_js"></script>

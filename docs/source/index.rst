@@ -1,9 +1,9 @@
 dicter's documentation!
 ========================
 
-.. |fig1| image:: ../figs/schematic_overview.png
+.. |fig1| image:: ../figs/logo.png
 
-.. table:: Schematic overview
+.. table::
    :align: center
 
    +----------+
