@@ -43,8 +43,6 @@
 
 * [**dicter documentation pages (Sphinx)**](https://erdogant.github.io/dicter/)
 
-* <a href="https://erdogant.github.io/dicter/"> <img src="https://img.shields.io/badge/Sphinx-Docs-Green" alt="Open documentation pages"/> </a> dicter documentation pages 
-
 
 ## Installation
 * Install dicter from PyPI (recommended). dicter is compatible with Python 3.6+ and runs on Linux, MacOS X and Windows. 
