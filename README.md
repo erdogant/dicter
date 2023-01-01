@@ -16,7 +16,7 @@
 [![Forks](https://img.shields.io/github/forks/erdogant/dicter.svg)](https://github.com/erdogant/dicter/network)
 [![Issues](https://img.shields.io/github/issues/erdogant/dicter.svg)](https://github.com/erdogant/dicter/issues)
 [![Project Status](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
-[![DOI](https://zenodo.org/badge/228166657.svg)](https://zenodo.org/badge/latestdoi/228166657)
+[![DOI](https://zenodo.org/badge/584101058.svg)](https://zenodo.org/badge/latestdoi/584101058)
 ![GitHub Repo stars](https://img.shields.io/github/stars/erdogant/dicter)
 ![GitHub repo size](https://img.shields.io/github/repo-size/erdogant/dicter)
 [![Donate](https://img.shields.io/badge/Support%20this%20project-grey.svg?logo=github%20sponsors)](https://erdogant.github.io/dicter/pages/html/Documentation.html#)
