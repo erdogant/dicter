@@ -475,7 +475,6 @@ def set_logger(verbose: [str, int] = 'info'):
                   'critical': 50}
         verbose = levels[verbose]
 
-    # Show examples
     logger.setLevel(verbose)
 
 
