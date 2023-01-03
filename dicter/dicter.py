@@ -14,6 +14,8 @@ from functools import reduce
 from operator import getitem
 import re
 import pandas as pd
+import numpy as np
+from tqdm import tqdm
 
 logger = logging.getLogger('')
 for handler in logger.handlers[:]:
@@ -24,6 +26,55 @@ console.setFormatter(formatter)
 logger.addHandler(console)
 logger = logging.getLogger()
 logger.setLevel(20)
+
+
+# %% Get nested item from dictionary
+def to_df(d: dict, sep: str = '_', verbose: [str, int] = 'info') -> pd.DataFrame():
+    """Convert to dataFrame.
+
+    Parameters
+    ----------
+    d : dict
+        Input dictionary.
+    sep : str, default is '->'
+        The seperator should be unique and is used to normalize the dictionary.
+
+    Returns
+    -------
+    None.
+
+    Examples
+    --------
+    >>> # Import dicter
+    >>> import dicter as dt
+    >>> #
+    >>> # Example 1
+    >>> d = {'Person 1': {'Country': 'NL', 'Income': {'Amsterdam': 100, 'The Haque': 50}, 'Age': 33, 'Type': 'bicycle'},
+             'Person 2': {'Country': 'USA', 'Income': {'NY': 150, 'The Haque': 50}, 'Age': 23, 'Type': 'Taxi'},
+             'Person 3': {'Country': 'DE', 'Income': {'BE': 90}, 'Age': 43, 'Type': 'Car'} }
+    >>> #
+    >>> # Convert to DataFrame
+    >>> df = dt.to_df(d)
+    >>> #
+    >>> #
+    >>> # Example 2
+    >>> d = {'Country': 'NL', 'Weight': {'Amsterdam': 100, 'The Haque': 50}, 'Age': 33}
+    >>> df = dt.to_df(d)
+    >>> #
+
+    """
+    dfs=[]
+    for key in tqdm(d.keys(), disable=disable_tqdm()):
+        if isinstance(d[key], dict):
+            dlist = np.array(path(d[key], sep=sep, keys_as_list=False, verbose=verbose))
+            dfs = dfs + [pd.DataFrame(data=dlist[:, 1], columns=[key], index=dlist[:, 0])]
+
+    # Concat all dfs
+    if len(dfs)>0:
+        df = pd.concat(dfs, axis=1)
+    else:
+        df = pd.DataFrame(d)
+    return df
 
 
 # %% Get nested item from dictionary
@@ -371,7 +422,7 @@ def save(d: dict, filepath: str, overwrite: bool = False, verbose: [str, int] = 
     # Set the logger
     set_logger(verbose)
     writeok = False
-    # Check filepath
+    # Check filepath and extension. Add .json if not exists.
     filepath = _check_filepath(filepath)
 
     # Dump to json when allowed to overwrite or if the file not exists yet.

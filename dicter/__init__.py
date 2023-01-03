@@ -7,13 +7,14 @@ from dicter.dicter import (
     compare,
     save,
     load,
+    to_df,
     clean_filename,
     set_logger)
 
 
 __author__ = 'Erdogan Tasksen'
 __email__ = 'erdogant@gmail.com'
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 
 # module level doc-string
 __doc__ = """
@@ -55,6 +56,9 @@ Example
 >>>
 >>> # Compare
 >>> results = dt.compare(d, d)
+>>>
+>>> # To dataframe
+>>> results = dt.to_df(d)
 >>>
 >>> # save
 >>> dt.save('./test_dict.json', d)
