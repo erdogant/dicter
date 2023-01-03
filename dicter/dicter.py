@@ -73,7 +73,8 @@ def to_df(d: dict, sep: str = '_', verbose: [str, int] = 'info') -> pd.DataFrame
     if len(dfs)>0:
         df = pd.concat(dfs, axis=1)
     else:
-        df = pd.DataFrame(d)
+        dlist = np.array(path(d, sep=sep, keys_as_list=False, verbose=verbose))
+        df = pd.DataFrame(data=dlist[:, 1], index=dlist[:, 0])
     return df
 
 
