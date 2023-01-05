@@ -63,6 +63,16 @@ def to_df(d: dict, sep: str = '_', verbose: [str, int] = 'info') -> pd.DataFrame
     >>> #
 
     """
+    if not isinstance(d, dict): raise Exception('Input should be of type dict.')
+    # Set the logger
+    set_logger(verbose)
+
+    # If no keys in dict > return
+    if len(d.keys())==0:
+        logger.debug('Empty DataFrame returned.')
+        return pd.DataFrame()
+
+    # Start with emtpy list to append all dataframes.
     dfs=[]
     for key in tqdm(d.keys(), disable=disable_tqdm()):
         if isinstance(d[key], dict):
@@ -75,6 +85,7 @@ def to_df(d: dict, sep: str = '_', verbose: [str, int] = 'info') -> pd.DataFrame
     else:
         dlist = np.array(path(d, sep=sep, keys_as_list=False, verbose=verbose))
         df = pd.DataFrame(data=dlist[:, 1], index=dlist[:, 0])
+        df.columns = df.columns.astype(str)
     return df
 
 
