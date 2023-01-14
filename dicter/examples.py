@@ -5,7 +5,20 @@ import dicter as dt
 
 # %%
 d = {'a': 1, 'b': {'f': 'hello world'}, 'c': 3, 'd': {'a': 1, 'b': 2, 'c': {'e': 10}}, 'g': 2}
-paths = dt.path(d)
+paths = dt.traverse(d)
 
 # %%
-dt.messages(verbose=10)
+data = {
+    "spam": {
+        "egg": {
+            "bacon": "Well..",
+            "sausages": "Spam egg sausages and spam",
+            "spam": "does not have much spam in it"
+        }
+    }
+}
+
+print('spam (exists): {}'.format(dt.is_key(data, ["spam"])))
+print('spam > bacon (do not exists): {}'.format(dt.is_key(data, ["spam", "bacon"])))
+print('spam > egg (exists): {}'.format(dt.is_key(data, ["spam", "egg"])))
+print('spam > egg > bacon (exists): {}'.format(dt.is_key(data, ["spam", "egg", "bacon"])))

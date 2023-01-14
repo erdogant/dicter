@@ -162,26 +162,26 @@ def get_nested(d: dict, path: list):
     >>> # Example dictionary
     >>> d = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 3, 'level_d': {'a': 1, 'b': 2, 'c': {'e': 10}}, 'level_e': 2}
     >>> # Get the value for the nested path for:
-    >>> value = dt.get_nested(d, key_path=["level_a"])
+    >>> value = dt.get_nested(d, ["level_a"])
     >>> print(value)  # 1
     >>> #
     >>> # Get the value for the nested path for:
-    >>> value = dt.get_nested(d, key_path=["level_b","a"])
+    >>> value = dt.get_nested(d, ["level_b","a"])
     >>> print(value)  # hello world
     >>> #
     >>> # Get the value for the nested path for:
-    >>> value = dt.get_nested(d, key_path=["level_d","c", "e"])
+    >>> value = dt.get_nested(d, ["level_d","c", "e"])
     >>> print(value)  # 10
     >>> #
     >>> # Get the value for the nested path for a list:
     >>> l = [[[1,2,3],[10,20,30]]]
-    >>> value = dt.get_nested(l, key_path=[0,1,2])    # =>>> 30
+    >>> value = dt.get_nested(l, [0,1,2])    # =>>> 30
     >>> print(value)  # 30
 
     """
     value = None
     try:
-        value = reduce(getitem, key_path, d)
+        value = reduce(getitem, path, d)
     except:
         pass
 
@@ -189,14 +189,14 @@ def get_nested(d: dict, path: list):
 
 
 # %%
-def set_nested(d: dict, key_path: list, value: str) -> dict:
+def set_nested(d: dict, path: list, value: str) -> dict:
     """Set nested value in dictionary.
 
     Parameters
     ----------
     d : dict
         Input dictionary.
-    key_path : list
+    path : list
         The nested path of keys in a ordered list.
     value : str
         The value that needs to be set.
@@ -212,36 +212,36 @@ def set_nested(d: dict, key_path: list, value: str) -> dict:
     >>> #
     >>> # Example: New path and value in dictionary.
     >>> d = {}
-    >>> key_path = ['person', 'address', 'city']
-    >>> dt.set_nested(d, key_path, 'New York')
+    >>> path = ['person', 'address', 'city']
+    >>> dt.set_nested(d, path, 'New York')
     >>> # Print updated dictionary
     >>> print(d)
     >>> # {'person': {'address': {'city': 'New York'}}}
     >>> #
     >>> # Example: Update value in path.
     >>> d = {'person': {'address': {'city': 'New York'}}}
-    >>> key_path = ['person', 'address', 'city']
-    >>> dt.set_nested(d, key_path, 'Amsterdam')
+    >>> path = ['person', 'address', 'city']
+    >>> dt.set_nested(d, path, 'Amsterdam')
     >>> # Print updated dictionary
     >>> print(d)
     >>> # {'person': {'address': {'city': 'Amsterdam'}}, 'person_2': {'address': {'city': 'Amsterdam'}}}
     >>> #
     >>> # Example: New path with value.
     >>> d = {'person': {'address': {'city': 'New York'}}}
-    >>> key_path = ['person_2', 'address', 'city']
-    >>> dt.set_nested(d, key_path, 'Amsterdam')
+    >>> path = ['person_2', 'address', 'city']
+    >>> dt.set_nested(d, path, 'Amsterdam')
     >>> # Print updated dictionary
     >>> print(d)
     >>> # {'person': {'address': {'city': 'New York'}}, 'person_2': {'address': {'city': 'Amsterdam'}}}
 
     """
-    for k in key_path[:-1]:
+    for k in path[:-1]:
         d = d.setdefault(k, {})
-    d[key_path[-1]] = value
+    d[path[-1]] = value
 
 
 # %% Traverse all paths in dictionary.
-def path(d: dict, sep: str = '$->$', keys_as_list: bool = True, verbose: [str, int] = 'info') -> list:
+def traverse(d: dict, sep: str = '$->$', keys_as_list: bool = True, verbose: [str, int] = 'info') -> list:
     """Traverse through all paths in dictionary.
 
     Parameters
@@ -265,7 +265,7 @@ def path(d: dict, sep: str = '$->$', keys_as_list: bool = True, verbose: [str, i
     Returns
     -------
     dic : list
-        list containing two columns: [[key_path, value]].
+        list containing two columns: [[key], value].
 
     Examples
     --------
@@ -275,9 +275,9 @@ def path(d: dict, sep: str = '$->$', keys_as_list: bool = True, verbose: [str, i
     >>> Example dict
     >>> d = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 3, 'level_d': {'a': 1, 'b': 2, 'c': {'e': 10}}, 'level_e': 2}
     >>> # Traverse all paths in dictionary
-    >>> paths = dt.path(d)
+    >>> dlist = dt.traverse(d)
     >>> #
-    >>> print(paths)
+    >>> print(dlist)
     >>> # [[['level_a'], 1],
     >>> # [['level_c'], 3],
     >>> # [['level_e'], 2],
@@ -286,9 +286,9 @@ def path(d: dict, sep: str = '$->$', keys_as_list: bool = True, verbose: [str, i
     >>> # [['level_d', 'b'], 2],
     >>> # [['level_d', 'c', 'e'], 10]]
     >>> #
-    >>> # Example to retrieve value from a dictionary using key path
-    >>> key_paths = list(map(lambda x: x[0], paths))
-    >>> value = dt.get_nested(d, key_paths[3])  # ['level_b', 'a']
+    >>> # Example to retrieve value from a dictionary
+    >>> value = dt.get_nested(d, dlist[3])
+    >>> # Look up for ['level_b', 'a']
     >>> print(value)  # hello world
 
     """
@@ -458,11 +458,11 @@ def save(d: dict, filepath: str, overwrite: bool = False, verbose: [str, int] = 
         False: Do not overwrite existing files.
     verbose : int, default is 'info' or 20
         Set the verbose messages using string or integer values.
-            * [0, None, 'silent', 'off', 'no']: No message.
-            * [10, 'debug']: Messages from debug level and higher.
-            * [20, 'info']: Messages from info level and higher.
-            * [30, 'warning']: Messages from warning level and higher.
-            * [40, 'critical']: Messages from critical level and higher.
+            * 0, None, 'silent', 'off', 'no': No message.
+            * 10,'debug': Messages from debug level and higher.
+            * 20,'info': Messages from info level and higher.
+            * 30,'warning': Messages from warning level and higher.
+            * 40,'critical': Messages from critical level and higher.
 
     Returns
     -------
