@@ -28,6 +28,53 @@ logger = logging.getLogger()
 logger.setLevel(20)
 
 
+# %%
+def is_key(d: dict, path: list) -> bool:
+    """Check whether the dictionary contains the key.
+
+    Parameters
+    ----------
+    d : dict
+        Input dictionary.
+    path : list
+        The nested path of keys in a ordered list.
+        Example: ['level 1', 'level 2']
+
+    Returns
+    -------
+    Bool
+        True: Key exists.
+        False: Key does not exist.
+
+    Examples
+    --------
+    >>> # Import dicter
+    >>> import dicter as dt
+    >>> #
+    >>> # Example dictionary
+    >>> d = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 3, 'level_d': {'a': 1, 'b': 2, 'c': {'e': 10}}, 'level_e': 2}
+    >>> # Get the value for the nested path for:
+    >>> value = dt.is_key(d, "level_a")
+    >>> print(value)  # 1
+    >>> #
+    >>> # Get the value for the nested path for:
+    >>> value = dt.is_key(d, ["level_b","a"])
+    """
+
+    if not isinstance(d, dict):
+        raise AttributeError('is_key() expects dict as first argument.')
+    if not isinstance(path, list):
+        raise AttributeError('is_key() expects at least two arguments, one given.')
+
+    _d = d
+    for key in path:
+        try:
+            _d = _d[key]
+        except KeyError:
+            return False
+    return True
+
+
 # %% Get nested item from dictionary
 def to_df(d: dict, sep: str = '_', verbose: [str, int] = 'info') -> pd.DataFrame():
     """Convert to dataFrame.
