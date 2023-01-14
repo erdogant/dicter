@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Nested &mdash; dicter dicter documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Sponsor" href="Documentation.html" />
+    <link rel="prev" title="Installation" href="Installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> dicter
+          </a>
+              <div class="version">
+                0.1.5
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+              <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html#uninstalling">Uninstalling</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Functions</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Get Nested</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#set-nested">Set Nested</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#module-dicter.dicter.traverse">Traverse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#module-dicter.dicter.flatten">Flatten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#check-key-exists">Check key exists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#module-dicter.dicter.depth">Depth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#module-dicter.dicter.compare">Compare</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#description">Description</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#module-dicter.dicter.save">Save</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#module-dicter.dicter.load">Load</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Documentation.html">Sponsor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Documentation.html#github">Github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Documentation.html#citing">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Coding%20quality.html">Coding quality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dicter.dicter.html">API References</a></li>
+</ul>
+
+    <a href= "genindex.html">Index</a>
+  
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">dicter</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Get Nested</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Functions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-dicter.dicter.get_nested">
+<span id="get-nested"></span><h1>Get Nested<a class="headerlink" href="#module-dicter.dicter.get_nested" title="Permalink to this heading"></a></h1>
+<p>Get nested value from dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param d</dt>
+<dd class="field-odd"><p>Input dictionary.</p>
+</dd>
+<dt class="field-even">type d</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">param path</dt>
+<dd class="field-odd"><p>The nested path of keys in a ordered list.
+Example: [‘level 1’, ‘level 2’]</p>
+</dd>
+<dt class="field-even">type path</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+<dt class="field-odd">returns</dt>
+<dd class="field-odd"><p><strong>value</strong> –</p>
+<ul class="simple">
+<li><p>value belonging to the key.</p></li>
+<li><p>None: if the path does not exists.</p></li>
+</ul>
+</dd>
+<dt class="field-even">rtype</dt>
+<dd class="field-even"><p>string or numerical</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Import dicter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">dicter</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example dictionary</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span><span class="p">},</span> <span class="s1">&#39;level_c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;level_d&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}},</span> <span class="s1">&#39;level_e&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get the value for the nested path for:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">get_nested</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;level_a&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># 1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get the value for the nested path for:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">get_nested</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;level_b&quot;</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># hello world</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get the value for the nested path for:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">get_nested</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;level_d&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># 10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get the value for the nested path for a list:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">get_nested</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>    <span class="c1"># =&gt;&gt;&gt; 30</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># 30</span>
+</pre></div>
+</div>
+</section>
+<section id="set-nested">
+<h1>Set Nested<a class="headerlink" href="#set-nested" title="Permalink to this heading"></a></h1>
+<p>Set nested value from dictionary.</p>
+<span class="target" id="module-dicter.dicter.set_nested"></span><p>Set nested value in dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param d</dt>
+<dd class="field-odd"><p>Input dictionary.</p>
+</dd>
+<dt class="field-even">type d</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">param path</dt>
+<dd class="field-odd"><p>The nested path of keys in a ordered list.</p>
+</dd>
+<dt class="field-even">type path</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+<dt class="field-odd">param value</dt>
+<dd class="field-odd"><p>The value that needs to be set.</p>
+</dd>
+<dt class="field-even">type value</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+<dt class="field-odd">rtype</dt>
+<dd class="field-odd"><p>Dictionary is updated without a return.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Import dicter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">dicter</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example: New path and value in dictionary.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;person&#39;</span><span class="p">,</span> <span class="s1">&#39;address&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span><span class="o">.</span><span class="n">set_nested</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="s1">&#39;New York&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Print updated dictionary</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># {&#39;person&#39;: {&#39;address&#39;: {&#39;city&#39;: &#39;New York&#39;}}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example: Update value in path.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;address&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;New York&#39;</span><span class="p">}}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;person&#39;</span><span class="p">,</span> <span class="s1">&#39;address&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span><span class="o">.</span><span class="n">set_nested</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="s1">&#39;Amsterdam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Print updated dictionary</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># {&#39;person&#39;: {&#39;address&#39;: {&#39;city&#39;: &#39;Amsterdam&#39;}}, &#39;person_2&#39;: {&#39;address&#39;: {&#39;city&#39;: &#39;Amsterdam&#39;}}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example: New path with value.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;address&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;New York&#39;</span><span class="p">}}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;person_2&#39;</span><span class="p">,</span> <span class="s1">&#39;address&#39;</span><span class="p">,</span> <span class="s1">&#39;city&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span><span class="o">.</span><span class="n">set_nested</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="s1">&#39;Amsterdam&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Print updated dictionary</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># {&#39;person&#39;: {&#39;address&#39;: {&#39;city&#39;: &#39;New York&#39;}}, &#39;person_2&#39;: {&#39;address&#39;: {&#39;city&#39;: &#39;Amsterdam&#39;}}}</span>
+</pre></div>
+</div>
+</section>
+<section id="module-dicter.dicter.traverse">
+<span id="traverse"></span><h1>Traverse<a class="headerlink" href="#module-dicter.dicter.traverse" title="Permalink to this heading"></a></h1>
+<p>Traverse through all paths in dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param d</dt>
+<dd class="field-odd"><p>Input dictionary.</p>
+</dd>
+<dt class="field-even">type d</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">param sep</dt>
+<dd class="field-odd"><p>The seperator should be unique and is used to normalize the dictionary.
+Change the sep in case a string exists with such pattern in the input dictionary.</p>
+</dd>
+<dt class="field-even">type sep</dt>
+<dd class="field-even"><p>str, default is ‘$-&gt;$’</p>
+</dd>
+<dt class="field-odd">param keys_as_list</dt>
+<dd class="field-odd"><p>True: Output is structured list with keys.
+False: Output is list with keys seperated with the “sep” string.</p>
+</dd>
+<dt class="field-even">type keys_as_list</dt>
+<dd class="field-even"><p>bool, default is True</p>
+</dd>
+<dt class="field-odd">param verbose</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>Set the verbose messages using string or integer values.</dt><dd><ul class="simple">
+<li><p>[0, None, ‘silent’, ‘off’, ‘no’]: No message.</p></li>
+<li><p>[10, ‘debug’]: Messages from debug level and higher.</p></li>
+<li><p>[20, ‘info’]: Messages from info level and higher.</p></li>
+<li><p>[30, ‘warning’]: Messages from warning level and higher.</p></li>
+<li><p>[40, ‘critical’]: Messages from critical level and higher.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">type verbose</dt>
+<dd class="field-even"><p>int, default is ‘info’ or 20</p>
+</dd>
+<dt class="field-odd">returns</dt>
+<dd class="field-odd"><p><strong>dic</strong> – list containing two columns: [[key], value].</p>
+</dd>
+<dt class="field-even">rtype</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Import dicter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">dicter</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Example</span> <span class="nb">dict</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span><span class="p">},</span> <span class="s1">&#39;level_c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;level_d&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}},</span> <span class="s1">&#39;level_e&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Traverse all paths in dictionary</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dlist</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">traverse</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">dlist</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># [[[&#39;level_a&#39;], 1],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># [[&#39;level_c&#39;], 3],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># [[&#39;level_e&#39;], 2],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># [[&#39;level_b&#39;, &#39;a&#39;], &#39;hello world&#39;],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># [[&#39;level_d&#39;, &#39;a&#39;], 1],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># [[&#39;level_d&#39;, &#39;b&#39;], 2],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># [[&#39;level_d&#39;, &#39;c&#39;, &#39;e&#39;], 10]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example to retrieve value from a dictionary</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">get_nested</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">dlist</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Look up for [&#39;level_b&#39;, &#39;a&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># hello world</span>
+</pre></div>
+</div>
+</section>
+<section id="module-dicter.dicter.flatten">
+<span id="flatten"></span><h1>Flatten<a class="headerlink" href="#module-dicter.dicter.flatten" title="Permalink to this heading"></a></h1>
+<p>Flatten dictionary to the deepest level and return key-value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param d</dt>
+<dd class="field-odd"><p>Input dictionary.</p>
+</dd>
+<dt class="field-even">type d</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">returns</dt>
+<dd class="field-odd"><p><strong>d_flatten</strong> – Flattened dictionary containing key and value.</p>
+</dd>
+<dt class="field-even">rtype</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Import dicter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">dicter</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example dict</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span><span class="p">},</span> <span class="s1">&#39;level_c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;level_d&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}},</span> <span class="s1">&#39;level_e&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Flatten dictionary</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dflat</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">d_flat</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="check-key-exists">
+<h1>Check key exists<a class="headerlink" href="#check-key-exists" title="Permalink to this heading"></a></h1>
+<p>Check whether key exists in dictionary.</p>
+<span class="target" id="module-dicter.dicter.is_key"></span><p>Check whether the dictionary contains the key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param d</dt>
+<dd class="field-odd"><p>Input dictionary.</p>
+</dd>
+<dt class="field-even">type d</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">param path</dt>
+<dd class="field-odd"><p>The nested path of keys in a ordered list.
+Example: [‘level 1’, ‘level 2’]</p>
+</dd>
+<dt class="field-even">type path</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+<dt class="field-odd">returns</dt>
+<dd class="field-odd"><p>True: Key exists.
+False: Key does not exist.</p>
+</dd>
+<dt class="field-even">rtype</dt>
+<dd class="field-even"><p>Bool</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Import dicter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">dicter</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example dictionary</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span><span class="p">},</span> <span class="s1">&#39;level_c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;level_d&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}},</span> <span class="s1">&#39;level_e&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get the value for the nested path for:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">is_key</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s2">&quot;level_a&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># 1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get the value for the nested path for:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">is_key</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;level_b&quot;</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="module-dicter.dicter.depth">
+<span id="depth"></span><h1>Depth<a class="headerlink" href="#module-dicter.dicter.depth" title="Permalink to this heading"></a></h1>
+<p>Depth of dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param d</dt>
+<dd class="field-odd"><p>Input dictionary.</p>
+</dd>
+<dt class="field-even">type d</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">returns</dt>
+<dd class="field-odd"><p><strong>depth</strong> – Depth of dictionary.</p>
+</dd>
+<dt class="field-even">rtype</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Import dicter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">dicter</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Example</span> <span class="nb">dict</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span><span class="p">},</span> <span class="s1">&#39;level_c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;level_d&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}},</span> <span class="s1">&#39;level_e&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">depth</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="module-dicter.dicter.compare">
+<span id="compare"></span><h1>Compare<a class="headerlink" href="#module-dicter.dicter.compare" title="Permalink to this heading"></a></h1>
+<p>Compare two dictionaries.</p>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading"></a></h2>
+<p>The second dictionary is compared with the first one, and results are shown accordingly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param d1</dt>
+<dd class="field-odd"><p>Dictionary.</p>
+</dd>
+<dt class="field-even">type d1</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">param d2</dt>
+<dd class="field-odd"><p>Dictionary.</p>
+</dd>
+<dt class="field-even">type d2</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">returns</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>added</strong> (<em>list</em>) – added keys in d1 compared with d2.</p></li>
+<li><p><strong>removed</strong> (<em>list</em>) – Removed keys in d1 compared with d2.</p></li>
+<li><p><strong>modified</strong> (<em>list</em>) – Modified keys in d1 compared with d2.</p></li>
+<li><p><strong>same</strong> (<em>list</em>) – Similar keys in d1 compared with d2.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Import dicter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">dicter</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Example</span><span class="p">:</span> <span class="n">Add</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span><span class="p">},</span> <span class="s1">&#39;level_c&#39;</span><span class="p">:</span> <span class="s1">&#39;new in d2&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span><span class="p">}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">out</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Example</span><span class="p">:</span> <span class="n">Remove</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span><span class="p">}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span><span class="p">},</span> <span class="s1">&#39;level_c&#39;</span><span class="p">:</span> <span class="s1">&#39;new in d2&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">out</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Example</span><span class="p">:</span> <span class="n">Modified</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span><span class="p">}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;modified&#39;</span><span class="p">}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">out</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="p">[</span><span class="s1">&#39;modified&#39;</span><span class="p">])</span>
+<span class="go">&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="module-dicter.dicter.save">
+<span id="save"></span><h1>Save<a class="headerlink" href="#module-dicter.dicter.save" title="Permalink to this heading"></a></h1>
+<p>Save dictionary to json.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param d</dt>
+<dd class="field-odd"><p>Dictionary.</p>
+</dd>
+<dt class="field-even">type d</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">param filepath</dt>
+<dd class="field-odd"><p>File path to store the dictionary.</p>
+</dd>
+<dt class="field-even">type filepath</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+<dt class="field-odd">param overwrite</dt>
+<dd class="field-odd"><p>True: Overwrite if file exists.
+False: Do not overwrite existing files.</p>
+</dd>
+<dt class="field-even">type overwrite</dt>
+<dd class="field-even"><p>bool, default: False</p>
+</dd>
+<dt class="field-odd">param verbose</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>Set the verbose messages using string or integer values.</dt><dd><ul class="simple">
+<li><p>0, None, ‘silent’, ‘off’, ‘no’: No message.</p></li>
+<li><p>10,’debug’: Messages from debug level and higher.</p></li>
+<li><p>20,’info’: Messages from info level and higher.</p></li>
+<li><p>30,’warning’: Messages from warning level and higher.</p></li>
+<li><p>40,’critical’: Messages from critical level and higher.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">type verbose</dt>
+<dd class="field-even"><p>int, default is ‘info’ or 20</p>
+</dd>
+<dt class="field-odd">returns</dt>
+<dd class="field-odd"><p><strong>writeok</strong> – True: Succesful writing to json on disk.
+False: Nothing is written to disk.</p>
+</dd>
+<dt class="field-even">rtype</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Import dicter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">dicter</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="go">&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span><span class="p">},</span> <span class="s1">&#39;level_c&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;level_d&#39;</span><span class="p">:</span> <span class="mf">2.3</span><span class="p">,</span> <span class="s1">&#39;level_e&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">filepath</span><span class="o">=</span><span class="s1">&#39;c:/temp/test/dicter_save.json&#39;</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="module-dicter.dicter.load">
+<span id="load"></span><h1>Load<a class="headerlink" href="#module-dicter.dicter.load" title="Permalink to this heading"></a></h1>
+<p>Load dictionary from json file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param filepath</dt>
+<dd class="field-odd"><p>path location to json.</p>
+</dd>
+<dt class="field-even">type filepath</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+<dt class="field-odd">param verbose</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>Set the verbose messages using string or integer values.</dt><dd><ul class="simple">
+<li><p>[0, None, ‘silent’, ‘off’, ‘no’]: No message.</p></li>
+<li><p>[10, ‘debug’]: Messages from debug level and higher.</p></li>
+<li><p>[20, ‘info’]: Messages from info level and higher.</p></li>
+<li><p>[30, ‘warning’]: Messages from warning level and higher.</p></li>
+<li><p>[40, ‘critical’]: Messages from critical level and higher.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">type verbose</dt>
+<dd class="field-even"><p>str, optional</p>
+</dd>
+<dt class="field-odd">returns</dt>
+<dd class="field-odd"><p><strong>dictionary</strong> – None or Dictionary.</p>
+</dd>
+<dt class="field-even">rtype</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Import dicter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">dicter</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span><span class="p">},</span> <span class="s1">&#39;level_c&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;level_d&#39;</span><span class="p">:</span> <span class="mf">2.3</span><span class="p">,</span> <span class="s1">&#39;level_e&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filepath</span><span class="o">=</span><span class="s1">&#39;c:/temp/test/dicter_save.json&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># First save</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">filepath</span><span class="o">=</span><span class="n">filepath</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Load</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr>
+<center>
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEADP27U&placement=erdogantgithubio" id="_carbonads_js"></script>
+</center>
+<hr></section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Documentation.html" class="btn btn-neutral float-right" title="Sponsor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Erdogan Taskesen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
