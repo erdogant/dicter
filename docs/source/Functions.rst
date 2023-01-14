@@ -16,10 +16,10 @@ Set nested value from dictionary.
     :undoc-members:
 
 
-Path
+Traverse
 ################################################################
 
-.. automodule:: dicter.dicter.path
+.. automodule:: dicter.dicter.traverse
     :members:
     :undoc-members:
 
@@ -29,6 +29,16 @@ Flatten
 ################################################################
 
 .. automodule:: dicter.dicter.flatten
+    :members:
+    :undoc-members:
+
+
+Check key exists
+################################################################
+
+Check whether key exists in dictionary.
+
+.. automodule:: dicter.dicter.is_key
     :members:
     :undoc-members:
 
