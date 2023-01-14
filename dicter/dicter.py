@@ -76,35 +76,36 @@ def to_df(d: dict, sep: str = '_', verbose: [str, int] = 'info') -> pd.DataFrame
     dfs=[]
     for key in tqdm(d.keys(), disable=disable_tqdm()):
         if isinstance(d[key], dict):
-            dlist = np.array(path(d[key], sep=sep, keys_as_list=False, verbose=verbose))
+            dlist = np.array(traverse(d[key], sep=sep, keys_as_list=False, verbose=verbose))
             dfs = dfs + [pd.DataFrame(data=dlist[:, 1], columns=[key], index=dlist[:, 0])]
 
     # Concat all dfs
     if len(dfs)>0:
         df = pd.concat(dfs, axis=1)
     else:
-        dlist = np.array(path(d, sep=sep, keys_as_list=False, verbose=verbose))
+        dlist = np.array(traverse(d, sep=sep, keys_as_list=False, verbose=verbose))
         df = pd.DataFrame(data=dlist[:, 1], index=dlist[:, 0])
         df.columns = df.columns.astype(str)
     return df
 
 
 # %% Get nested item from dictionary
-def get_nested(d: dict, key_path: list):
+def get_nested(d: dict, path: list):
     """Get nested value from dictionary.
 
     Parameters
     ----------
     d : dict
         Input dictionary.
-    key_path : list
+    path : list
         The nested path of keys in a ordered list.
+        Example: ['level 1', 'level 2']
 
     Returns
     -------
     value : string or numerical
         * value belonging to the key.
-        * None: if the key_path does not exists.
+        * None: if the path does not exists.
 
     Examples
     --------

@@ -1,7 +1,7 @@
 from dicter.dicter import (
     set_nested,
     get_nested,
-    path,
+    traverse,
     flatten,
     depth,
     compare,
@@ -9,12 +9,13 @@ from dicter.dicter import (
     load,
     to_df,
     clean_filename,
+    is_key,
     set_logger)
 
 
 __author__ = 'Erdogan Tasksen'
 __email__ = 'erdogant@gmail.com'
-__version__ = '0.1.4'
+__version__ = '0.1.5'
 
 # module level doc-string
 __doc__ = """
@@ -25,8 +26,8 @@ Description
 -----------
 dicter is a Python package with advanced dictionary functions:
 	* Traverse through nested dicts to retrieve key-path.
-	* Set value in dictionary using key-path.
-	* Get value in dictionary using key-path.
+	* Set value in dictionary using path.
+	* Get value in dictionary using path.
 	* Flattens dicts.
 	* Compare two dicts.
 	* Store and load in json.
@@ -46,7 +47,7 @@ Example
 >>> dt.set_nested(d, ['level_b', 'a'], 'Amsterdam')
 >>>
 >>> # Traverse all paths in dictionary
->>> paths = dt.path(d)
+>>> paths = dt.traverse(d)
 >>>
 >>> # Flatten
 >>> fdict = dt.flatten(d)

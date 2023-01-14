@@ -72,7 +72,7 @@ import dicter as dt
  # Example dict:
 d = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 3, 'level_d': {'a': 1, 'b': 2, 'c': {'e': 10}}, 'level_e': 2}
 # Walk through dict to get all paths
-paths = dt.path(d)
+paths = dt.traverse(d)
 
 print(paths)
 # [[['level_a'], 1],
