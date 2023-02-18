@@ -1,3 +1,6 @@
+import os
+from glob import glob
+
 ############### Download rst file ###############
 def download_file(url_rst, filename):
     try:
@@ -11,7 +14,7 @@ def download_file(url_rst, filename):
 
 ############### Include ADD to rst files ###############
 def add_includes_to_rst_files():
-    for file_path in glob.glob("*.rst"):
+    for file_path in glob("*.rst"):
         with open(file_path, "r+") as file:
             contents = file.read()
             if ".. include:: add_top.add" not in contents:
@@ -19,7 +22,7 @@ def add_includes_to_rst_files():
                 file.write(".. include:: add_top.add\n\n" + contents)
                 print('Top Add included >%s' %(file_path))
 
-			if ".. include:: add_bottom.add" not in contents:
+            if ".. include:: add_bottom.add" not in contents:
                 file.seek(0, 2)
                 file.write("\n\n.. include:: add_bottom.add")
                 print('Bottom Add included >%s' %(file_path))
