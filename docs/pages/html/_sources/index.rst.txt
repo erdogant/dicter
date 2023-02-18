@@ -1,3 +1,11 @@
+dicter's documentation!
+========================
+
+|python| |pypi| |docs| |stars| |LOC| |downloads_month| |downloads_total| |license| |forks| |open issues| |project status| |DOI| |repo-size| |donate|
+
+.. include:: add_top.add
+
+
 .. |logo| image:: ../figs/logo.png
 
 .. table::
@@ -9,10 +17,6 @@
 
 -----------------------------------
 
-|python| |pypi| |docs| |stars| |LOC| |downloads_month| |downloads_total| |license| |forks| |open issues| |project status| |DOI| |repo-size| |donate|
-
-
-.. include:: add_top.add
 
 
 *dicter* is a Python package with advanced dictionary functions:
@@ -26,19 +30,17 @@
 
 
 
-Github
-======
-Please report bugs, issues and feature extensions at `github <https://github.com/erdogant/dicter/>`_.
+-----------------------------------
 
+.. note::
+	**Your ❤️ is important to keep maintaining this package.** You can `support <https://erdogant.github.io/dicter/pages/html/Documentation.html>`_ in various ways, have a look at the `sponser page <https://erdogant.github.io/dicter/pages/html/Documentation.html>`_.
+	Report bugs, issues and feature extensions at `github <https://github.com/erdogant/dicter/>`_ page.
 
-Quick install
-=============
+	.. code-block:: console
 
-.. code-block:: console
+	   pip install dicter
 
-   pip install dicter
-
-
+-----------------------------------
 
 Content
 =======
