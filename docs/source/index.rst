@@ -16,12 +16,13 @@
 
 
 *dicter* is a Python package with advanced dictionary functions:
-	* 1. Traverse through nested dicts to retrieve key-path.
-	* 2. Set value in dictionary using key-path
-	* 3. Get value in dictionary using key-path.
-	* 4. Flattens dicts.
-	* 5. Compare two dicts.
-	* 6. Store and load in json.
+
+* Traverse through nested dicts to retrieve key-path.
+* Set value in dictionary using key-path
+* Get value in dictionary using key-path.
+* Flattens dicts.
+* Compare two dicts.
+* Store and load in json.
 
 
 
