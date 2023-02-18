@@ -1,15 +1,30 @@
-###################### ADD TO REST ######################
-def adds_in_rst(filehandle):
-    # Write carbon adds
-    filehandle.write("\n\n.. raw:: html\n")
-    filehandle.write("\n   <hr>")
-    filehandle.write("\n   <center>")
-    filehandle.write('\n     <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEADP27U&placement=erdogantgithubio" id="_carbonads_js"></script>')
-    filehandle.write("\n   </center>")
-    filehandle.write("\n   <hr>")
+############### Download rst file ###############
+def download_file(url_rst, filename):
+    try:
+    	from urllib.request import urlretrieve
+    	if os.path.isfile(filename):
+    		os.remove(filename)
+    		print('Download %s..' %(filename))
+    	urlretrieve (url_rst, filename)
+    except:
+    	print('Downloading %s failed.' %(url_rst))
 
+############### Include ADD to rst files ###############
+def add_includes_to_rst_files():
+    for file_path in glob("*.rst"):
+        with open(file_path, "r+") as file:
+            contents = file.read()
+            if ".. include:: add_top.add" not in contents:
+                file.seek(0)
+                file.write(".. include:: add_top.add\n\n" + contents)
+                print('Top Add included >%s' %(file_path))
 
-#######################################################################
+            if ".. include:: add_bottom.add" not in contents:
+                file.seek(0, 2)
+                file.write("\n\n.. include:: add_bottom.add")
+                print('Bottom Add included >%s' %(file_path))
+
+########################################################################################
 
 # Configuration file for the Sphinx documentation builder.
 #
@@ -23,26 +38,21 @@ def adds_in_rst(filehandle):
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
+
+from glob import glob
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../../'))
 import dicter
 
-
-############### Download rst file ####################################################
+########################################################################################
 # -- Download rst file -----------------------------------------------------
-try:
-	from urllib.request import urlretrieve
-	sponsor_url_rst = 'https://erdogant.github.io/docs/rst/sponsor.rst'
-	sponsor_file = "sponsor.rst"
-	if os.path.isfile(sponsor_file):
-		os.remove(sponsor_file)
-		print('Update sponsor rst file.')
-	urlretrieve (sponsor_url_rst, sponsor_file)
-except:
-	print('Downloading sponsor.rst file failed.')
-
-
+download_file('https://erdogant.github.io/docs/rst/sponsor.rst', "sponsor.rst")
+download_file('https://erdogant.github.io/docs/rst/add_carbon.add', "add_carbon.add")
+download_file('https://erdogant.github.io/docs/rst/add_top.add', "add_top.add")
+download_file('https://erdogant.github.io/docs/rst/add_bottom.add', "add_bottom.add")
+########################################################################################
+add_includes_to_rst_files()
 ########################################################################################
 
 

@@ -1,3 +1,5 @@
+.. include:: add_top.add
+
 Installation
 ################
 
@@ -72,3 +74,6 @@ Note that the removal of the environment will also remove the ``dicter`` install
 	<hr>
 
 
+
+
+.. include:: add_bottom.add

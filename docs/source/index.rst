@@ -1,3 +1,4 @@
+
 .. |logo| image:: ../figs/logo.png
 
 .. table::
@@ -12,14 +13,16 @@
 |python| |pypi| |docs| |stars| |LOC| |downloads_month| |downloads_total| |license| |forks| |open issues| |project status| |DOI| |repo-size| |donate|
 
 
-*dicter* is a Python package with advanced dictionary functions:
+.. include:: add_top.add
 
-	* Traverse through nested dicts to retrieve key-path.
-	* Set value in dictionary using key-path
-	* Get value in dictionary using key-path.
-	* Flattens dicts.
-	* Compare two dicts.
-	* Store and load in json.
+
+*dicter* is a Python package with advanced dictionary functions:
+	* 1. Traverse through nested dicts to retrieve key-path.
+	* 2. Set value in dictionary using key-path
+	* 3. Get value in dictionary using key-path.
+	* 4. Flattens dicts.
+	* 5. Compare two dicts.
+	* 6. Store and load in json.
 
 
 
@@ -64,7 +67,6 @@ Content
   dicter.dicter
 
 
-
 Indices and tables
 ==================
 
@@ -73,13 +75,6 @@ Indices and tables
 * :ref:`search`
 
 
-.. raw:: html
-
-	<hr>
-	<center>
-		<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEADP27U&placement=erdogantgithubio" id="_carbonads_js"></script>
-	</center>
-	<hr>
 
 
 
@@ -138,3 +133,9 @@ Indices and tables
 .. |repo-size| image:: https://img.shields.io/github/repo-size/erdogant/dicter
     :alt: repo-size
     :target: https://img.shields.io/github/repo-size/erdogant/dicter
+
+
+
+.. include:: add_carbon.add
+.. include:: add_bottom.add
+
