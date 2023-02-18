@@ -1,4 +1,3 @@
-
 .. |logo| image:: ../figs/logo.png
 
 .. table::

@@ -20,7 +20,7 @@ import sys
 sys.path.insert(0, os.path.abspath('./'))
 sys.path.insert(0, os.path.abspath('../../'))
 import dicter
-from helper import download_file, add_includes_to_rst_files
+from helper import *
 
 ########################################################################################
 # -- Download rst file -----------------------------------------------------
