@@ -381,8 +381,6 @@ def depth(d: dict):
 def compare(d1: dict, d2: dict):
     """Compare two dictionaries.
 
-    Description
-    -----------
     The second dictionary is compared with the first one, and results are shown accordingly.
 
     Parameters

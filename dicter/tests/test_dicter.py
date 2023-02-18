@@ -4,8 +4,6 @@ import pandas as pd
 import numpy as np
 import unittest
 
-import unittest
-
 # class TestCompare(unittest.TestCase):
     # def test_compare(self):
     #     # Test input of type dict with same keys and values
