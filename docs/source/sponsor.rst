@@ -1,5 +1,3 @@
-.. include:: add_top.add
-
 .. tip::
 	If you ❤️ this project, you can help in various ways.
 
@@ -15,6 +13,3 @@
 .. raw:: html
 
 	<iframe src="https://github.com/sponsors/erdogant/button" title="Sponsor erdogant" height="35" width="116" style="border: 0;"></iframe>
-
-
-.. include:: add_bottom.add

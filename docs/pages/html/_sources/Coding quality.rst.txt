@@ -1,8 +1,5 @@
 .. include:: add_top.add
 
-.. _code_directive:
-
--------------------------------------
 
 Coding quality
 '''''''''''''''''''''

@@ -1,12 +1,3 @@
-"""dicter is a Python package with advanced dictionary functions.
-
-# Name        : dicter.py
-# Author      : E.Taskesen
-# Contact     : erdogant@gmail.com
-# github      : https://github.com/erdogant/dicter
-# Licence     : MIT
-"""
-
 import os
 import logging
 import json

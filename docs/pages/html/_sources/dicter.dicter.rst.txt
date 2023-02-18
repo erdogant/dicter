@@ -1,8 +1,5 @@
 .. include:: add_top.add
 
-API References
-------------------------------------------------
-
 
 .. automodule:: dicter.dicter
     :members:
