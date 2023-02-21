@@ -3,8 +3,6 @@ dicter's documentation!
 
 |python| |pypi| |docs| |stars| |LOC| |downloads_month| |downloads_total| |license| |forks| |open issues| |project status| |DOI| |repo-size| |donate|
 
-.. include:: add_top.add
-
 
 .. |logo| image:: ../figs/logo.png
 
