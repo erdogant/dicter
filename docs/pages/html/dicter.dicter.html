@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>&lt;no title&gt; &mdash; dicter dicter documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=e0179649" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=fff250d7"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -29,14 +30,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> dicter
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            dicter
           </a>
               <div class="version">
-                0.1.5
+                0.1.6
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -52,12 +57,14 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Functions.html">Get Nested</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Functions.html#set-nested">Set Nested</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Functions.html#module-dicter.dicter.update">Update Nested Dictionary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Functions.html#module-dicter.dicter.traverse">Traverse</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Functions.html#module-dicter.dicter.flatten">Flatten</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Functions.html#check-key-exists">Check key exists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Functions.html#module-dicter.dicter.depth">Depth</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Functions.html#module-dicter.dicter.compare">Compare</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Functions.html#module-dicter.dicter.save">Save</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Functions.html#module-dicter.dicter.save">To DataFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Functions.html#module-0">Save</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Functions.html#module-dicter.dicter.load">Load</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
@@ -80,6 +87,7 @@
 <li class="toctree-l1"><a class="reference internal" href="#dicter.dicter.set_nested"><code class="docutils literal notranslate"><span class="pre">set_nested()</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="#dicter.dicter.to_df"><code class="docutils literal notranslate"><span class="pre">to_df()</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="#dicter.dicter.traverse"><code class="docutils literal notranslate"><span class="pre">traverse()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="#dicter.dicter.update"><code class="docutils literal notranslate"><span class="pre">update()</span></code></a></li>
 </ul>
 
     <a href= "genindex.html">Index</a>
@@ -97,8 +105,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>&lt;no title&gt;</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">&lt;no title&gt;</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/dicter.dicter.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -108,25 +116,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <span class="target" id="module-dicter.dicter"></span><dl class="py function">
+  <dl class="py function" id="module-dicter.dicter">
 <dt class="sig sig-object py" id="dicter.dicter.clean_filename">
-<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">clean_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicter.dicter.clean_filename" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">clean_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicter.dicter.clean_filename" title="Link to this definition"></a></dt>
 <dd><p>Clean filename.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="dicter.dicter.compare">
-<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">compare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicter.dicter.compare" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">compare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicter.dicter.compare" title="Link to this definition"></a></dt>
 <dd><p>Compare two dictionaries.</p>
 <p>The second dictionary is compared with the first one, and results are shown accordingly.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>d1</strong> (<em>dict</em>) – Dictionary.</p></li>
 <li><p><strong>d2</strong> (<em>dict</em>) – Dictionary.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><ul class="simple">
 <li><p><strong>added</strong> (<em>list</em>) – added keys in d1 compared with d2.</p></li>
 <li><p><strong>removed</strong> (<em>list</em>) – Removed keys in d1 compared with d2.</p></li>
@@ -164,16 +172,16 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="dicter.dicter.depth">
-<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">depth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicter.dicter.depth" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">depth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicter.dicter.depth" title="Link to this definition"></a></dt>
 <dd><p>Depth of dictionary.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>d</strong> (<em>dict</em>) – Input dictionary.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>depth</strong> – Depth of dictionary.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -190,22 +198,22 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="dicter.dicter.disable_tqdm">
-<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">disable_tqdm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dicter.dicter.disable_tqdm" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">disable_tqdm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dicter.dicter.disable_tqdm" title="Link to this definition"></a></dt>
 <dd><p>Set the logger for verbosity messages.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="dicter.dicter.flatten">
-<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicter.dicter.flatten" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicter.dicter.flatten" title="Link to this definition"></a></dt>
 <dd><p>Flatten dictionary to the deepest level and return key-value.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>d</strong> (<em>dict</em>) – Input dictionary.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>d_flatten</strong> – Flattened dictionary containing key and value.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list</p>
 </dd>
 </dl>
@@ -225,17 +233,17 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="dicter.dicter.get_nested">
-<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">get_nested</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicter.dicter.get_nested" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">get_nested</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicter.dicter.get_nested" title="Link to this definition"></a></dt>
 <dd><p>Get nested value from dictionary.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>d</strong> (<em>dict</em>) – Input dictionary.</p></li>
 <li><p><strong>path</strong> (<em>list</em>) – The nested path of keys in a ordered list.
 Example: [‘level 1’, ‘level 2’]</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><p><strong>value</strong> –</p>
 <ul class="simple">
 <li><p>value belonging to the key.</p></li>
@@ -243,7 +251,7 @@ Example: [‘level 1’, ‘level 2’]</p></li>
 </ul>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>string or numerical</p>
 </dd>
 </dl>
@@ -275,21 +283,21 @@ Example: [‘level 1’, ‘level 2’]</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="dicter.dicter.is_key">
-<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">is_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#dicter.dicter.is_key" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">is_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#dicter.dicter.is_key" title="Link to this definition"></a></dt>
 <dd><p>Check whether the dictionary contains the key.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>d</strong> (<em>dict</em>) – Input dictionary.</p></li>
 <li><p><strong>path</strong> (<em>list</em>) – The nested path of keys in a ordered list.
 Example: [‘level 1’, ‘level 2’]</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True: Key exists.
 False: Key does not exist.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Bool</p>
 </dd>
 </dl>
@@ -299,9 +307,6 @@ False: Key does not exist.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Example dictionary</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;level_b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;hello world&#39;</span><span class="p">},</span> <span class="s1">&#39;level_c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;level_d&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}},</span> <span class="s1">&#39;level_e&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get the value for the nested path for:</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">is_key</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s2">&quot;level_a&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># 1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1">#</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get the value for the nested path for:</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">is_key</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;level_b&quot;</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">])</span>
@@ -311,10 +316,10 @@ False: Key does not exist.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="dicter.dicter.load">
-<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose:</span> <span class="pre">[&lt;class</span> <span class="pre">'str'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;class</span> <span class="pre">'int'&gt;]</span> <span class="pre">=</span> <span class="pre">'info'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicter.dicter.load" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose:</span> <span class="pre">[&lt;class</span> <span class="pre">'str'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;class</span> <span class="pre">'int'&gt;]</span> <span class="pre">=</span> <span class="pre">'info'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicter.dicter.load" title="Link to this definition"></a></dt>
 <dd><p>Load dictionary from json file.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>filepath</strong> (<em>str</em>) – path location to json.</p></li>
 <li><p><strong>verbose</strong> (<em>str</em><em>, </em><em>optional</em>) – <dl class="simple">
@@ -330,10 +335,10 @@ False: Key does not exist.</p>
 </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>dictionary</strong> – None or Dictionary.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -353,16 +358,16 @@ False: Key does not exist.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="dicter.dicter.mkdir">
-<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">mkdir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dirpath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicter.dicter.mkdir" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">mkdir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dirpath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicter.dicter.mkdir" title="Link to this definition"></a></dt>
 <dd><p>Create directory.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="dicter.dicter.save">
-<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d:</span> <span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose:</span> <span class="pre">[&lt;class</span> <span class="pre">'str'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;class</span> <span class="pre">'int'&gt;]</span> <span class="pre">=</span> <span class="pre">'info'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicter.dicter.save" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d:</span> <span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose:</span> <span class="pre">[&lt;class</span> <span class="pre">'str'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;class</span> <span class="pre">'int'&gt;]</span> <span class="pre">=</span> <span class="pre">'info'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicter.dicter.save" title="Link to this definition"></a></dt>
 <dd><p>Save dictionary to json.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>d</strong> (<em>dict</em>) – Dictionary.</p></li>
 <li><p><strong>filepath</strong> (<em>str</em>) – File path to store the dictionary.</p></li>
@@ -381,11 +386,11 @@ False: Do not overwrite existing files.</p></li>
 </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>writeok</strong> – True: Succesful writing to json on disk.
 False: Nothing is written to disk.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>bool</p>
 </dd>
 </dl>
@@ -401,10 +406,10 @@ False: Nothing is written to disk.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="dicter.dicter.set_logger">
-<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">set_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose:</span> <span class="pre">[&lt;class</span> <span class="pre">'str'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;class</span> <span class="pre">'int'&gt;]</span> <span class="pre">=</span> <span class="pre">'info'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicter.dicter.set_logger" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">set_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose:</span> <span class="pre">[&lt;class</span> <span class="pre">'str'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;class</span> <span class="pre">'int'&gt;]</span> <span class="pre">=</span> <span class="pre">'info'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicter.dicter.set_logger" title="Link to this definition"></a></dt>
 <dd><p>Set the logger for verbosity messages.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>verbose</strong> (<em>[</em><em>str</em><em>, </em><em>int</em><em>]</em><em>, </em><em>default is 'info'</em><em> or </em><em>20</em>) – <dl class="simple">
 <dt>Set the verbose messages using string or integer values.</dt><dd><ul class="simple">
 <li><p>[10, ‘debug’]: Messages from debug level and higher.</p></li>
@@ -417,7 +422,7 @@ False: Nothing is written to disk.</p>
 </dl>
 </p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>None.</p>
 </dd>
 </dl>
@@ -435,17 +440,17 @@ False: Nothing is written to disk.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="dicter.dicter.set_nested">
-<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">set_nested</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#dicter.dicter.set_nested" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">set_nested</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#dicter.dicter.set_nested" title="Link to this definition"></a></dt>
 <dd><p>Set nested value in dictionary.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>d</strong> (<em>dict</em>) – Input dictionary.</p></li>
 <li><p><strong>path</strong> (<em>list</em>) – The nested path of keys in a ordered list.</p></li>
 <li><p><strong>value</strong> (<em>str</em>) – The value that needs to be set.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>Dictionary is updated without a return.</p>
 </dd>
 </dl>
@@ -482,16 +487,16 @@ False: Nothing is written to disk.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="dicter.dicter.to_df">
-<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">to_df</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dicter.dicter.to_df" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">to_df</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dicter.dicter.to_df" title="Link to this definition"></a></dt>
 <dd><p>Convert to dataFrame.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>d</strong> (<em>dict</em>) – Input dictionary.</p></li>
 <li><p><strong>sep</strong> (<em>str</em><em>, </em><em>default is '-&gt;'</em>) – The seperator should be unique and is used to normalize the dictionary.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>None.</p>
 </dd>
 </dl>
@@ -518,10 +523,10 @@ False: Nothing is written to disk.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="dicter.dicter.traverse">
-<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">traverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d:</span> <span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'$-&gt;$'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys_as_list:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose:</span> <span class="pre">[&lt;class</span> <span class="pre">'str'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;class</span> <span class="pre">'int'&gt;]</span> <span class="pre">=</span> <span class="pre">'info'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#dicter.dicter.traverse" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">traverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d:</span> <span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'$-&gt;$'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys_as_list:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose:</span> <span class="pre">[&lt;class</span> <span class="pre">'str'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;class</span> <span class="pre">'int'&gt;]</span> <span class="pre">=</span> <span class="pre">'info'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#dicter.dicter.traverse" title="Link to this definition"></a></dt>
 <dd><p>Traverse through all paths in dictionary.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>d</strong> (<em>dict</em>) – Input dictionary.</p></li>
 <li><p><strong>sep</strong> (<em>str</em><em>, </em><em>default is '$-&gt;$'</em>) – The seperator should be unique and is used to normalize the dictionary.
@@ -541,10 +546,10 @@ False: Output is list with keys seperated with the “sep” string.</p></li>
 </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>dic</strong> – list containing two columns: [[key], value].</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list</p>
 </dd>
 </dl>
@@ -570,6 +575,62 @@ False: Output is list with keys seperated with the “sep” string.</p></li>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">get_nested</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">dlist</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Look up for [&#39;level_b&#39;, &#39;a&#39;]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># hello world</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dicter.dicter.update">
+<span class="sig-prename descclassname"><span class="pre">dicter.dicter.</span></span><span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dictionary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_to_update</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dicter.dicter.update" title="Link to this definition"></a></dt>
+<dd><p>Update a nested dictionary for a specific key with a new value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dictionary</strong> (<em>dict</em>) – The nested dictionary to update.</p></li>
+<li><p><strong>key_to_update</strong> (<em>str</em>) – The key to update.</p></li>
+<li><p><strong>new_value</strong> (<em>any</em>) – The new value to assign to the specified key.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data_dict_template</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">... </span>    <span class="s1">&#39;DEPARTURE&#39;</span><span class="p">:</span> <span class="p">{</span>
+<span class="gp">... </span>        <span class="s1">&#39;SLOPE&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s1">&#39;INTERSECTION&#39;</span><span class="p">:</span> <span class="s1">&#39;V4&#39;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s1">&#39;TORA&#39;</span><span class="p">:</span> <span class="s1">&#39;1234&#39;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s1">&#39;CIRCUIT_ALTITUDE&#39;</span><span class="p">:</span> <span class="s1">&#39;1000&#39;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s1">&#39;TOWER&#39;</span><span class="p">:</span> <span class="s1">&#39;122.108&#39;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s1">&#39;alignment&#39;</span><span class="p">:</span> <span class="s1">&#39;concrete&#39;</span>
+<span class="gp">... </span>    <span class="p">}</span>
+<span class="gp">... </span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">update</span><span class="p">(</span><span class="n">data_dict_template</span><span class="p">[</span><span class="s1">&#39;DEPARTURE&#39;</span><span class="p">],</span> <span class="s1">&#39;SLOPE&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data_dict_template</span><span class="p">[</span><span class="s1">&#39;DEPARTURE&#39;</span><span class="p">][</span><span class="s1">&#39;SLOPE&#39;</span><span class="p">]</span>
+<span class="go">5</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">update</span><span class="p">(</span><span class="n">data_dict_template</span><span class="p">[</span><span class="s1">&#39;DEPARTURE&#39;</span><span class="p">],</span> <span class="s1">&#39;INTERSECTION&#39;</span><span class="p">,</span> <span class="s1">&#39;V5&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data_dict_template</span><span class="p">[</span><span class="s1">&#39;DEPARTURE&#39;</span><span class="p">][</span><span class="s1">&#39;INTERSECTION&#39;</span><span class="p">]</span>
+<span class="go">&#39;V5&#39;</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">update</span><span class="p">(</span><span class="n">data_dict_template</span><span class="p">[</span><span class="s1">&#39;DEPARTURE&#39;</span><span class="p">],</span> <span class="s1">&#39;TORA&#39;</span><span class="p">,</span> <span class="s1">&#39;2000&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data_dict_template</span><span class="p">[</span><span class="s1">&#39;DEPARTURE&#39;</span><span class="p">][</span><span class="s1">&#39;TORA&#39;</span><span class="p">]</span>
+<span class="go">&#39;2000&#39;</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">update</span><span class="p">(</span><span class="n">data_dict_template</span><span class="p">[</span><span class="s1">&#39;DEPARTURE&#39;</span><span class="p">],</span> <span class="s1">&#39;CIRCUIT_ALTITUDE&#39;</span><span class="p">,</span> <span class="s1">&#39;1500&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data_dict_template</span><span class="p">[</span><span class="s1">&#39;DEPARTURE&#39;</span><span class="p">][</span><span class="s1">&#39;CIRCUIT_ALTITUDE&#39;</span><span class="p">]</span>
+<span class="go">&#39;1500&#39;</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">update</span><span class="p">(</span><span class="n">data_dict_template</span><span class="p">[</span><span class="s1">&#39;DEPARTURE&#39;</span><span class="p">],</span> <span class="s1">&#39;TOWER&#39;</span><span class="p">,</span> <span class="s1">&#39;122.109&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data_dict_template</span><span class="p">[</span><span class="s1">&#39;DEPARTURE&#39;</span><span class="p">][</span><span class="s1">&#39;TOWER&#39;</span><span class="p">]</span>
+<span class="go">&#39;122.109&#39;</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">update</span><span class="p">(</span><span class="n">data_dict_template</span><span class="p">[</span><span class="s1">&#39;DEPARTURE&#39;</span><span class="p">],</span> <span class="s1">&#39;alignment&#39;</span><span class="p">,</span> <span class="s1">&#39;asphalt&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data_dict_template</span><span class="p">[</span><span class="s1">&#39;DEPARTURE&#39;</span><span class="p">][</span><span class="s1">&#39;alignment&#39;</span><span class="p">]</span>
+<span class="go">&#39;asphalt&#39;</span>
 </pre></div>
 </div>
 </dd></dl>

@@ -16,6 +16,14 @@ Set nested value from dictionary.
     :undoc-members:
 
 
+Update Nested Dictionary
+################################################################
+
+.. automodule:: dicter.dicter.update
+    :members:
+    :undoc-members:
+
+
 Traverse
 ################################################################
 
@@ -56,6 +64,14 @@ Compare
 ################################################################
 
 .. automodule:: dicter.dicter.compare
+    :members:
+    :undoc-members:
+
+
+To DataFrame
+################################################################
+
+.. automodule:: dicter.dicter.save
     :members:
     :undoc-members:
 
