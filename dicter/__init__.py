@@ -17,15 +17,13 @@ from dicter.dicter import (
 
 __author__ = 'Erdogan Tasksen'
 __email__ = 'erdogant@gmail.com'
-__version__ = '0.1.5'
+__version__ = '0.1.6'
 
 # module level doc-string
 __doc__ = """
 dicter
 =====================================================================
 
-Description
------------
 dicter is a Python package with advanced dictionary functions:
 	* Traverse through nested dicts to retrieve key-path.
 	* Set value in dictionary using path.
@@ -33,9 +31,9 @@ dicter is a Python package with advanced dictionary functions:
 	* Flattens dicts.
 	* Compare two dicts.
 	* Store and load in json.
-    
-Example
--------
+
+Examples
+--------
 >>> # Import dicter
 >>> import dicter as dt
 >>>
