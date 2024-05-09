@@ -44,9 +44,6 @@ def is_key(d: dict, path: list) -> bool:
     >>> #
     >>> # Example dictionary
     >>> d = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 3, 'level_d': {'a': 1, 'b': 2, 'c': {'e': 10}}, 'level_e': 2}
-    >>> # Get the value for the nested path for:
-    >>> value = dt.is_key(d, "level_a")
-    >>> print(value)  # 1
     >>> #
     >>> # Get the value for the nested path for:
     >>> value = dt.is_key(d, ["level_b","a"])
@@ -531,6 +528,68 @@ def load(filepath: str, verbose: [str, int] = 'info'):
         logger.warning('File not found: %s' %(filepath))
     return d
 
+
+# %%
+def update_nested_dictionary(dictionary, key_to_update, new_value):
+    """Update a nested dictionary for a specific key with a new value.
+
+        Parameters
+        ----------
+        dictionary : dict
+            The nested dictionary to update.
+        key_to_update : str
+            The key to update.
+        new_value : any
+            The new value to assign to the specified key.
+
+        Examples
+        --------
+        >>> data_dict_template = {
+        ...     'DEPARTURE': {
+        ...         'SLOPE': 3,
+        ...         'INTERSECTION': 'V4',
+        ...         'TORA': '1234',
+        ...         'CIRCUIT_ALTITUDE': '1000',
+        ...         'TOWER': '122.108',
+        ...         'alignment': 'concrete'
+        ...     }
+        ... }
+        >>> update_nested_dictionary(data_dict_template['DEPARTURE'], 'SLOPE', 5)
+        >>> data_dict_template['DEPARTURE']['SLOPE']
+        5
+
+        >>> update_nested_dictionary(data_dict_template['DEPARTURE'], 'INTERSECTION', 'V5')
+        >>> data_dict_template['DEPARTURE']['INTERSECTION']
+        'V5'
+
+        >>> update_nested_dictionary(data_dict_template['DEPARTURE'], 'TORA', '2000')
+        >>> data_dict_template['DEPARTURE']['TORA']
+        '2000'
+
+        >>> update_nested_dictionary(data_dict_template['DEPARTURE'], 'CIRCUIT_ALTITUDE', '1500')
+        >>> data_dict_template['DEPARTURE']['CIRCUIT_ALTITUDE']
+        '1500'
+
+        >>> update_nested_dictionary(data_dict_template['DEPARTURE'], 'TOWER', '122.109')
+        >>> data_dict_template['DEPARTURE']['TOWER']
+        '122.109'
+
+        >>> update_nested_dictionary(data_dict_template['DEPARTURE'], 'alignment', 'asphalt')
+        >>> data_dict_template['DEPARTURE']['alignment']
+        'asphalt'
+
+    """
+    for key, value in dictionary.items():
+        if isinstance(value, dict):
+            update_nested_dictionary(value, key_to_update, new_value)
+        elif key == key_to_update:
+            dictionary[key] = new_value
+        elif isinstance(value, list):
+            for item in value:
+                if isinstance(item, dict):
+                    update_nested_dictionary(item, key_to_update, new_value)
+                    if key_to_update in item:
+                        item[key_to_update] = new_value
 
 # %%
 def set_logger(verbose: [str, int] = 'info'):
