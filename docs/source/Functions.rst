@@ -19,7 +19,7 @@ Set nested value from dictionary.
 Update Nested Dictionary
 ################################################################
 
-.. automodule:: dicter.dicter.update_nested_dictionary
+.. automodule:: dicter.dicter.update
     :members:
     :undoc-members:
 

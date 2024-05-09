@@ -530,7 +530,7 @@ def load(filepath: str, verbose: [str, int] = 'info'):
 
 
 # %%
-def update_nested_dictionary(dictionary, key_to_update, new_value):
+def update(dictionary, key_to_update, new_value):
     """Update a nested dictionary for a specific key with a new value.
 
         Parameters
@@ -554,42 +554,43 @@ def update_nested_dictionary(dictionary, key_to_update, new_value):
         ...         'alignment': 'concrete'
         ...     }
         ... }
-        >>> update_nested_dictionary(data_dict_template['DEPARTURE'], 'SLOPE', 5)
+        >>> update(data_dict_template['DEPARTURE'], 'SLOPE', 5)
         >>> data_dict_template['DEPARTURE']['SLOPE']
         5
 
-        >>> update_nested_dictionary(data_dict_template['DEPARTURE'], 'INTERSECTION', 'V5')
+        >>> update(data_dict_template['DEPARTURE'], 'INTERSECTION', 'V5')
         >>> data_dict_template['DEPARTURE']['INTERSECTION']
         'V5'
 
-        >>> update_nested_dictionary(data_dict_template['DEPARTURE'], 'TORA', '2000')
+        >>> update(data_dict_template['DEPARTURE'], 'TORA', '2000')
         >>> data_dict_template['DEPARTURE']['TORA']
         '2000'
 
-        >>> update_nested_dictionary(data_dict_template['DEPARTURE'], 'CIRCUIT_ALTITUDE', '1500')
+        >>> update(data_dict_template['DEPARTURE'], 'CIRCUIT_ALTITUDE', '1500')
         >>> data_dict_template['DEPARTURE']['CIRCUIT_ALTITUDE']
         '1500'
 
-        >>> update_nested_dictionary(data_dict_template['DEPARTURE'], 'TOWER', '122.109')
+        >>> update(data_dict_template['DEPARTURE'], 'TOWER', '122.109')
         >>> data_dict_template['DEPARTURE']['TOWER']
         '122.109'
 
-        >>> update_nested_dictionary(data_dict_template['DEPARTURE'], 'alignment', 'asphalt')
+        >>> update(data_dict_template['DEPARTURE'], 'alignment', 'asphalt')
         >>> data_dict_template['DEPARTURE']['alignment']
         'asphalt'
 
     """
     for key, value in dictionary.items():
         if isinstance(value, dict):
-            update_nested_dictionary(value, key_to_update, new_value)
+            update(value, key_to_update, new_value)
         elif key == key_to_update:
             dictionary[key] = new_value
         elif isinstance(value, list):
             for item in value:
                 if isinstance(item, dict):
-                    update_nested_dictionary(item, key_to_update, new_value)
+                    update(item, key_to_update, new_value)
                     if key_to_update in item:
                         item[key_to_update] = new_value
+
 
 # %%
 def set_logger(verbose: [str, int] = 'info'):

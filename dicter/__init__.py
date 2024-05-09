@@ -1,6 +1,7 @@
 from dicter.dicter import (
     set_nested,
     get_nested,
+    update,
     traverse,
     flatten,
     depth,
@@ -10,7 +11,8 @@ from dicter.dicter import (
     to_df,
     clean_filename,
     is_key,
-    set_logger)
+    set_logger,
+    )
 
 
 __author__ = 'Erdogan Tasksen'
