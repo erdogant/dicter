@@ -1,22 +1,31 @@
-import os
-import logging
-import json
+"""Various dictionary functionalities with dicter.
+
+Name        : dicter.py
+Author      : E.Taskesen
+Contact     : erdogant@gmail.com
+github      : https://github.com/erdogant/XXX
+Licence     : See licences
+
+"""
 from functools import reduce
 from operator import getitem
 import re
 import pandas as pd
 import numpy as np
 from tqdm import tqdm
+import json
+import logging
+import os
 
+# Ensuring a minimum width of 12
+NAME_WIDTH = max(len(__name__), 12)
 logger = logging.getLogger('')
-for handler in logger.handlers[:]:
-    logger.removeHandler(handler)
-console = logging.StreamHandler()
-formatter = logging.Formatter('[dicter] >%(levelname)s> %(message)s')
-console.setFormatter(formatter)
-logger.addHandler(console)
-logger = logging.getLogger()
-logger.setLevel(20)
+[logger.removeHandler(handler) for handler in logger.handlers[:]]
+logging.basicConfig(
+    format=f"%(asctime)s [%(name)-{NAME_WIDTH}s]> %(levelname)-8s> %(message)s",
+    datefmt="%d-%m-%y %H:%M:%S",
+    level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 
 # %%
