@@ -12,12 +12,13 @@ from dicter.dicter import (
     clean_filename,
     is_key,
     set_logger,
+    check_logger,
     )
 
 
 __author__ = 'Erdogan Tasksen'
 __email__ = 'erdogant@gmail.com'
-__version__ = '0.1.6'
+__version__ = '0.1.7'
 
 # module level doc-string
 __doc__ = """

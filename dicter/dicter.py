@@ -647,6 +647,15 @@ def set_logger(verbose: [str, int] = 'info'):
     logger.setLevel(verbose)
 
 
+def check_logger(verbose: [str, int] = 'info'):
+    """Check the logger."""
+    set_logger(verbose)
+    logger.debug('DEBUG')
+    logger.info('INFO')
+    logger.warning('WARNING')
+    logger.critical('CRITICAL')
+
+
 # %%
 def disable_tqdm():
     """Set the logger for verbosity messages."""
