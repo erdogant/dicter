@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dicter"
+dynamic = ["version"]
+authors = [{ name = "Erdogan Taskesen", email = "erdogant@gmail.com" },]
+description = "dicter is a Python package with advanced dictionary functions."
+readme = "README.md"
+requires-python = ">=3"
+license = { file = "LICENSE" }
+keywords = ["Python", ""]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = ['pandas', 'numpy', 'tqdm']
+
+[project.urls]
+Homepage = "https://erdogant.github.io/dicter"
+Download = "https://github.com/erdogant/dicter/archive/{version}.tar.gz"
+
+[tool.setuptools]
+packages = ["dicter"]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+version = { attr = "dicter.__version__" }
