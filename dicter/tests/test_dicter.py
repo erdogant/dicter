@@ -4,38 +4,6 @@ import pandas as pd
 import numpy as np
 import unittest
 
-# class TestCompare(unittest.TestCase):
-    # def test_compare(self):
-    #     # Test input of type dict with same keys and values
-    #     d1 = {'a': 1, 'b': 2}
-    #     d2 = {'a': 1, 'b': 2}
-    #     comparison_result = dt.compare(d1, d2)
-    #     self.assertIsInstance(comparison_result, dict)
-    #     self.assertEqual(comparison_result.get('added', []), set())
-    #     self.assertEqual(comparison_result.get('removed', []), set())
-    #     self.assertEqual(comparison_result.get('modified', []), set())
-    #     self.assertEqual(set(comparison_result.get('similar', [])), set(['a', 'b']))
-
-    #     # Test input of type dict with different keys and values
-    #     d1 = {'a': 1, 'b': 2}
-    #     d2 = {'c': 3, 'd': 4}
-    #     comparison_result = dt.compare(d1, d2)
-    #     self.assertIsinstance(comparison_result, dict)
-    #     self.assertEqual(set(comparison_result.get('added', [])), {'a', 'b'})
-    #     self.assertEqual(set(comparison_result.get('removed', [])), {'c', 'd'})
-    #     self.assertEqual(set(comparison_result.get('modified', {})), set())
-    #     self.assertEqual(set(comparison_result.get('similar', [])), set())
-
-    #     # Test input of type dict with similar keys and different values
-    #     d1 = {'a': 1, 'b': 2}
-    #     d2 = {'a': 3, 'b': 4}
-    #     comparison_result = cdt.ompare(d1, d2)
-    #     self.assertIsinstance(comparison_result, dict)
-    #     self.assertEqual(set(comparison_result.get('added', [])), set())
-    #     self.assertEqual(set(comparison_result.get('removed', [])), set())
-    #     self.assertEqual(set(comparison_result.get('modified', {})), {'a', 'b'})
-    #     self.assertEqual(set(comparison_result.get('similar', [])), set())
-
 class TestIs_key(unittest.TestCase):
     def test_is_key(self):
 
@@ -168,30 +136,6 @@ class Testdicter(unittest.TestCase):
         assert dt.depth(None)==0
         d = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 3, 'level_e': 2}
         assert dt.depth(d)==2
-
-    # def test_set_compare(self):
-        # Example: Add
-        # d1 = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 'new in d1'}
-        # d2 = {'level_a': 1, 'level_b': {'a': 'hello world'}}
-        # results = dt.compare(d1, d2)
-        # # assert str(results)=="{'added': ['level_c'], 'removed': None, 'modified': None, 'similar': ['level_b', 'level_a']}"
-        # # assert results['added'] is None
-        # assert results['added'][0]=='level_c'
-        # assert results['removed'] is None
-        # assert results['modified'] is None
-        # assert results['similar'][0]=='level_b'
-        # assert results['similar'][1]=='level_a'
-        # assert results['modified']['level_b'][0]['a']=='hello world'
-        # assert results['modified']['level_b'][1]['a']=='modified'
-        # Example: Remove
-        # d1 = {'level_a': 1, 'level_b': {'a': 'hello world'}}
-        # d2 = {'level_a': 1, 'level_b': {'a': 'hello world'}, 'level_c': 'new in d2'}
-        # assert str(dt.compare(d1, d2))=="{'added': None, 'removed': ['level_c'], 'modified': None, 'similar': ['level_b', 'level_a']}"
-        # # Example: Modified
-        # d1 = {'level_a': 1, 'level_b': {'a': 'hello world'}}
-        # d2 = {'level_a': 1, 'level_b': {'a': 'modified'}}
-        # assert str(dt.compare(d1, d2))=="{'added': None, 'removed': None, 'modified': ['level_b'], 'similar': ['level_a']}"
-
 
 if __name__ == '__main__':
     unittest.main()
