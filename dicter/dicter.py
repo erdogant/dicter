@@ -14,18 +14,11 @@ import pandas as pd
 import numpy as np
 from tqdm import tqdm
 import json
-import logging
 import os
+import logging
 
-# Ensuring a minimum width of 12
-NAME_WIDTH = max(len(__name__), 12)
-logger = logging.getLogger('')
-[logger.removeHandler(handler) for handler in logger.handlers[:]]
-logging.basicConfig(
-    format=f"%(asctime)s [%(name)-{NAME_WIDTH}s]> %(levelname)-8s> %(message)s",
-    datefmt="%d-%m-%y %H:%M:%S",
-    level=logging.INFO)
 logger = logging.getLogger(__name__)
+
 
 
 # %%
@@ -641,6 +634,7 @@ def set_logger(verbose: [str, int] = 'info'):
                   'debug': 10,
                   'info': 20,
                   'warning': 30,
+                  'error': 50,
                   'critical': 50}
         verbose = levels[verbose]
 
